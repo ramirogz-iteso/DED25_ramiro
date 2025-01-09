@@ -11,6 +11,15 @@ typedef struct stack_node {
 stack_node *stack_top = NULL;
 int count = 0;
 
+int main() 
+{
+  char formula1[30] = "aa()bb({c})(ddd((rr((a)a))))";
+  char formula2[30] = "((a+b)-(z*d))";
+
+  isvalidformula(formula1);
+  isvalidformula(formula2);
+}
+
 // Push() operation on a stack
 void push(int data) 
 {
@@ -103,11 +112,3 @@ void isvalidformula(char * formula)
 
 }
 
-int main() 
-{
-  char formula1[30] = "aa()bb({c})(ddd((rr((a)a))))";
-  char formula2[30] = "((a+b)-(z*d))";
-
-  isvalidformula(formula1);
-  isvalidformula(formula2);
-}
