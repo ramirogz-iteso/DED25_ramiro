@@ -1,0 +1,27 @@
+
+Introduction to the terminal.
+
+Basic commands:
+cd   		- "Change Directory" move inside a folder
+ls		  - List files in the current directory
+pwd		  - show where we are
+		
+..		  - "back" or upper directory 
+.		    - “here” or current directory
+cd ..   - move up
+clear   - clean screen
+./      - run a binary, from the current folder
+
+example: ./program1.exe
+
+To compile:
+
+gcc sourceFile.c -o binaryName.exe
+
+ex.
+  gcc homework1.c -o hm1.exe
+
+Para correr:
+  ./hm1.exe
+
+You can use TAB to autocomplete.
