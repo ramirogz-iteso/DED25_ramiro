@@ -1,5 +1,8 @@
 /* Fix this hello world program
 
+ a line here
+
+
   Open the terminal:
 
   step 1) compile
@@ -13,11 +16,14 @@
   TIPS:
   ls
 
+  another line here
+
 */
 
 #include <stdio.h>
 int main(void) 
 {
   printf("Hello World Welcome to Class #1\n");
+  printf("END");
   return 0;
 }
