@@ -15,10 +15,9 @@
 
 */
 
-//#include <stdio.h>
-
+#include <stdio.h>
 int main(void) 
 {
-  printf("Hello World Welcome to Class #1\n")
+  printf("Hello World Welcome to Class #1\n");
   return 0;
 }
