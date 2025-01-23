@@ -9,10 +9,6 @@
 
   step 2) run it
     ./hello_world.exe
-
-  TIPS:
-  ls
-
 */
 
 #include <stdio.h>
