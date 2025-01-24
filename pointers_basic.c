@@ -5,17 +5,19 @@
 #define CLEAR printf("\033[0;0H\033[2J");
 
 void ex1_pointers_size();
+void ex2_playing_with_pointers();
 
 int main()
 {
   CLEAR
   printf("Hello world\n");
   /* verify the size of the pointers */
-  ex1_pointers_size();
+  //ex1_pointers_size();
   getchar();
   printf("=+=+=+ # # # # =+=+=+ # # # # =+=+=+ \n");
   // COMPLETE EXCERSICE ex_derefencing pointers HERE:
   printf("... complete your excersice ....\n");
+  ex2_playing_with_pointers();
   printf("=+=+=+ # # # # =+=+=+ # # # # =+=+=+ \n\n");
   return 0;
 }
@@ -120,3 +122,50 @@ see what happens if you use the * on a pointer that is not intialized
 
 Finally print the value of the variable like normal.
 */
+void ex2_playing_with_pointers()
+{
+  int * ptr1; 
+  int * ptr2;
+  int * ptr3;
+  int value;
+  printf(" = = = = = Ex02 = = = = = = \n");
+
+  int *ptr5 = NULL;
+  if(ptr5 != NULL)
+  {
+    int x = 10 + *ptr5;
+    printf("%d\n", x);
+  }
+
+  /* Step 1 */
+  ptr1 = &value;
+  *ptr1 = 10;
+  printf("ptr1 lives in %p points to %p that contains %d\n",
+          &ptr1, ptr1, *ptr1);
+
+  /* Step 2 */
+  ptr2 = &value;
+  *ptr2 = *ptr2 * 2;
+   printf("ptr2 lives in %p points to %p that contains %d\n",
+          &ptr2, ptr2, *ptr2);
+
+  /* Step 3 */
+  ptr3 = ptr2;
+  *ptr3+=5;
+  printf("ptr3 lives in %p points to %p that contains %d\n",
+          &ptr3, ptr3, *ptr3);
+
+  printf("Value = %d\n", value);
+
+  value = 999999;
+
+  int * ptr4 = ptr3;
+  printf("printing a big int with an int pointer %d\n", *ptr4 );
+
+  char * cptr = (char*) ptr4;
+  printf("printing a big int with an char pointer by mistake %d\n", *cptr );
+
+
+
+
+}
