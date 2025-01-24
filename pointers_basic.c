@@ -5,16 +5,17 @@
 #define CLEAR printf("\033[0;0H\033[2J");
 
 void ex1_pointers_size();
-void ex2_dereferencing_pointers();
 
 int main()
 {
   CLEAR
+  printf("Hello world\n");
   /* verify the size of the pointers */
   ex1_pointers_size();
   getchar();
-  printf("=+=+=+ # # # # =+=+=+ # # # # =+=+=+ \n\n");
-  ex2_dereferencing_pointers();
+  printf("=+=+=+ # # # # =+=+=+ # # # # =+=+=+ \n");
+  // COMPLETE EXCERSICE ex_derefencing pointers HERE:
+  printf("... complete your excersice ....\n");
   printf("=+=+=+ # # # # =+=+=+ # # # # =+=+=+ \n\n");
   return 0;
 }
@@ -26,7 +27,7 @@ void ex1_pointers_size()
   The size of the pointer is based on the platform, and it is the number
   of bytes required to address the memory space.
 
-  In all 64 bit systems, this is always 8 bits */
+  In all 64 bit systems, this is always 8 bytes */
 
   printf(" = = = = = Ex 01 POINTERS BASICS = = = = = = \n");
   char c = 'A';
@@ -49,30 +50,36 @@ void ex1_pointers_size()
   getchar();
 
   /* Pointers can point to any kind of variable, even STRUCTS : */
+  //typedef
   struct node {
     int a;
     int b ;
     int c;
   } node;
 
-  /* 
-    This node contains 3 ints:
-    We know then its size must be sizeof(int) x 3 = 12 bytes.
-    A pointer to node, is of size 8, just as ALL the pointers on this system.
- */
   struct node mynode;
   struct node *ptr_node = &mynode;
+
+  printf("how big is a pointer to a struct ??");
+  getchar();
   
   printf("node size : %ld \n", sizeof (mynode));
   printf("ptr to node size : %ld \n", sizeof (ptr_node));
   printf(" = = = = = = = = = = = = = = = = = = = \n");
+
+  /*  This node contains 3 ints:
+    We know then its size must be sizeof(int) x 3 = 12 bytes.
+    A pointer to node, is of size 8, just as ALL the pointers on this system. */
+  getchar();
   
   /* lastly lets see where everything is in memory */
   printf("the address of variable i = %p \n", &i );
   printf("the value stored in ptr_i = %p \n", ptr_i);
   printf("the value inside i = %d \n", i);
   printf("the value that ptr_i points to = %d \n", *ptr_i);
+                                                    //i
   printf(" = = = = = = = = = = = = = = = = = = = \n");
+  getchar();
 
   /* we can do the same with chars */
   char letter;
@@ -85,57 +92,31 @@ void ex1_pointers_size()
   printf("letter = %c\n", letter);
 
   /*What you CAN'T do is assign a pointer to another of a different type */
-  char_ptr = ptr_i;
+  //char_ptr = ptr_i;
 }
 
-void ex2_dereferencing_pointers()
-{
-  /* Ex 2:
-  Declare 3 int pointers variables.
-  Declare 1 int variable.
-  Modify the variable value by using a different pointer each time.
+/* Ex 2: Create a new function (call it from the main loop) 
+that does the following:
 
-  Step 1:
-    Assign initial value of 10
-  Step 2:
-    Multiply its value by 2.
-  Step 3:
-    Add 5 and print
+Declare 3 int pointers variables.
+Declare 1 int variable.
+Modify the variable value by using a different pointer each time.
 
-  USE a different pointer in each step.
-  After each step, print the address of each pointer, the address to 
-  where it points to and its value:
+Step 1:
+  Assign initial value of 10
+Step 2:
+  Multiply its value by 2.
+Step 3:
+  Add 5 and print
 
-  OUTPUT sample
-  ptr1 lives in _____________ points to ____________ that cointains _______
+USE a different pointer in each step.
+After each step, print the address of each pointer, the address to 
+where it points to and its value:
 
-  Finally print the value of the variable like normal.
-  */  
+OUTPUT sample
+ptr1 lives in _____________ points to ____________ that cointains _______
 
-  int * ptr1; 
-  int * ptr2;
-  int * ptr3;
-  int value;
-  printf(" = = = = = Ex02 = = = = = = \n");
+see what happens if you use the * on a pointer that is not intialized
 
-  /* Step 1 */
-  ptr1 = &value;
-  *ptr1 = 10;
-  printf("ptr1 lives in %p points to %p that contains %d\n",
-          &ptr1, ptr1, *ptr1);
-
-  /* Step 2 */
-  ptr2 = &value;
-  *ptr2 = *ptr2 * 2;
-   printf("ptr2 lives in %p points to %p that contains %d\n",
-          &ptr2, ptr2, *ptr2);
-
-  /* Step 3 */
-  ptr3 = &value;
-  *ptr3+=5;
-  printf("ptr3 lives in %p points to %p that contains %d\n",
-          &ptr3, ptr3, *ptr3);
-
-  printf("Value = %d\n", value);
-  
-}
+Finally print the value of the variable like normal.
+*/
