@@ -33,10 +33,10 @@ int main()
 {
   CLEAR
   //test 1
-  add10_test();  
+  //add10_test();  
 
   //test 2
-  //in_and_out_args();
+  in_and_out_args();
 
   //test 3
   //swap_me()
@@ -92,7 +92,7 @@ void in_and_out_args()
   ie:
       sum(a, b, magic); 
 
-  A a function that returns a+b and tell us if any of those is a "magic"
+  A function that returns a+b and tell us if any of those is a "magic"
   number, lets define a magic number as 10;
   
   Out arguments are areas of memory that we pass to a function and
@@ -102,7 +102,7 @@ void in_and_out_args()
 
   int a = 10;
   int b = 14;
-  boolean magic = FALSE;
+  boolean magic = FALSE; //int set to zero
   
   int result = sum(a, b, &magic);
   
