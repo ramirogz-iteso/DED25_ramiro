@@ -11,7 +11,7 @@ void structs();
 int main()
 {
   CLEAR
-  pointers_math();
+  //pointers_math();
   //getchar();
 
   CLEAR
@@ -58,11 +58,11 @@ void pointers_math()
   printf("\n");
 
   /* How can we do the above for loop, without "[]" ?*/
-  int * a_pointer_to_int = numbers;;
+  int * a_pointer_to_int = numbers;
   for(int i = 0; i<5; i++, a_pointer_to_int++)
   {
-    printf("%p - %d ", i_ptr, *i_ptr);
-    i_ptr++;
+    printf("%p - %d ", a_pointer_to_int, *a_pointer_to_int);
+    //i_ptr++;
   }
   printf("\n");
   
