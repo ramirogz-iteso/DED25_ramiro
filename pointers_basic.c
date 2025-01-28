@@ -164,8 +164,4 @@ void ex2_playing_with_pointers()
 
   char * cptr = (char*) ptr4;
   printf("printing a big int with an char pointer by mistake %d\n", *cptr );
-
-
-
-
 }

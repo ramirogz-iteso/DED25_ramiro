@@ -1,1 +1,0 @@
- char_ptr = ptr_i;
