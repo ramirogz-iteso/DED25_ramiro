@@ -15,6 +15,7 @@ Pointer arithmetic on a void pointer works byte by byte (like char).
 
 Reference:
 GeeksforGeeks: Void Pointer in C/C++
+LINK is missing:
 
 */
 
@@ -36,10 +37,10 @@ int main()
 
   /* 2 ways to use it */
   //1) direct casting
-  printf("el valor de a = %d\n", *(int *)vptr);
+  printf("the value of a = %d\n", *(int *)vptr);
 
   //2) restoring the void pointer into the real pointer
-  int * iptr = vptr;
+  int * iptr =  vptr;  //implicit cast
   printf("a value = %d\n", *iptr);
 
   printf("void ptr addr %p and value is %d \n", vptr, *(int *)vptr);
@@ -83,11 +84,11 @@ void myprint(void * ptr, TYPE t)
   }
   
   if(t == INTEGER)
-    printf("NUM: %d",*(int *)ptr);
+    printf("NUM: [[%d]]",*(int *)ptr);
   if(t == CHAR)
-    printf("Letter [%c] ", *(char *)ptr);
+    printf("Letter :%c: ", *(char *)ptr);
   if(t == FLOAT)
-    printf("Float %f ", *(float *)ptr);
+    printf("Float $$$%f", *(float *)ptr);
 
   printf("\n");
 }

@@ -20,7 +20,9 @@ int main()
 
   printf("Enter your name: ");
   ret = fgets(string, 50,stdin);
-  upper_to_lower(string);
+
+  char * newname = NULL;
+  upper_to_lower(newname);
   puts(string);
   return 0;
 }
@@ -101,6 +103,11 @@ void ex02()
 
 void upper_to_lower(char * string)
 {
+  if(string == NULL)
+  {
+    printf("error, the caller is dumb, I was passed a null pointer. exiting...\n");
+    return;
+  }
   char *cptr = string;
   
   while (*cptr != '\0')
