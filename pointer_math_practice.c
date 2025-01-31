@@ -6,12 +6,22 @@
 
 void ex01();
 void ex02();
-void ex03();
-void ex04();
+void upper_to_lower(char*);
+//void ex03();
+//void ex04();
 
 int main()
 {
+  //ex01();
+  //ex02();
 
+  char string[50];
+  char *ret; 
+
+  printf("Enter your name: ");
+  ret = fgets(string, 50,stdin);
+  upper_to_lower(string);
+  puts(string);
   return 0;
 }
 
@@ -33,7 +43,28 @@ void ex01()
     array[2] = 5 -> addr = 0x00008
     array[3] = 6 -> addr = 0x0000B
 */
+  int nums[10] = {1,2,3,4,5,6,7,8,9,10};
+  int * iptr = nums;
+  for(int i = 0; i<10; i++)
+  {
+    printf("array[%d] = %d -> addr = %p\n",
+      i, *iptr, iptr);
+    iptr++;
+  } 
 
+}
+
+int mylenght(char * arr)
+{
+  char *ptr = arr;
+  int count = 0;
+  
+  while(*ptr != '\0')
+  {
+    count++;
+    ptr++;
+  }
+  return count;
 }
 
 void ex02()
@@ -46,20 +77,45 @@ void ex02()
 
   TIP: all strings are array of chars, terminated by '\0' character.
 */
+  char name[400];
+  int ret;
+
+  printf("Please give me your name: \n");
+  ret = scanf("%s", name);
+
+  printf("My name is %s\n", name);
+  printf("len = %d\n", mylenght(name));
 }
 
 /* More practice excerises (similar to Ex02)
 
-  NOTA :    No utilizar arreglos o corchetes dentro de
-            ninguna de las 2 funciones.
-
+  NOTA :  DO NOT USE [BRACKETS] in any function
+  
   Excercise 03
-  Implementa una funcion, que reciba por referencia un arreglo,
-  recorra este arreglo y cambie cualquier mayuscula a minuscula, 
-  el arreglo se debe de imprimir de vuelta en el main  Tip: ASCII table
-
-  Exercise 04
-  Implementa una función isBinary que reciba una cadena de texto de consola
-  y determine si está formada exclusivamente por dígitos binarios (0, 1). 
+  Implement a function that receives an array, traverses the array
+  chaging all letters in CAPs to Lowercase.
+  The array must be printed in the main loop to verify the results.
+  TIP: See ASCII table
   
 */
+
+void upper_to_lower(char * string)
+{
+  char *cptr = string;
+  
+  while (*cptr != '\0')
+  {
+    if(*cptr < 97 && *cptr >= 65)
+      *cptr+=32;
+
+    cptr++;
+  }
+}
+
+/* Exercise 04
+  Implement an isBinary function that receives a string and determines
+  if its a binary number (must be formed of only 1s and 0s).
+
+  SOMETHING SIMILAR IS ON THE EXAM!
+*/
+  

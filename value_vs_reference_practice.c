@@ -1,5 +1,33 @@
 #include <stdio.h>
 
+void swap(int *, int *);
+int blackjack(int, int*, char *);
+
+int main()
+{
+
+  /* Exercise 1:  swap num1 and num2 value */
+  int num1 = 1;
+  int num2 = 20;
+
+  swap(&num1, &num2);
+  printf("num1 = %d num2 = %d\n", num1, num2);
+
+  /* Exercise 2:  Blackjack 
+    Call and test your program here */
+
+  char flag = '0';  //init value
+  int result = blackjack( num1, &num2, &flag);
+
+  if(flag == 'W') printf("We have a winner!\n");
+  if (result)
+    printf("Sum is POSITIVE = %d\n", num2);
+  else
+    printf("Sum is NEGATIVE = %d\n", num2);
+  
+  return 0;
+}
+
 /* 
   Excercise 1 : swap
   Create a function that "swaps" the contents of two variables.
@@ -38,29 +66,4 @@ int blackjack(int num1, int *num2, char *flag)
 
   return result;
 
-}
-
-int main()
-{
-
-  /* Exercise 1:  swap num1 and num2 value */
-  int num1 = 1;
-  int num2 = 20;
-
-  swap(&num1, &num2);
-  printf("num1 = %d num2 = %d\n", num1, num2);
-
-  /* Exercise 2:  Blackjack 
-    Call and test your program here */
-
-  char flag = '0';  //init value
-  int result = blackjack( num1, &num2, &flag);
-
-  if(flag == 'W') printf("We have a winner!\n");
-  if (result)
-    printf("Sum is POSITIVE = %d\n", num2);
-  else
-    printf("Sum is NEGATIVE = %d\n", num2);
-  
-  return 0;
 }
