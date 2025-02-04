@@ -1,0 +1,49 @@
+
+= = = = = = = = = = = = = = = = O U R    D I A R Y  = = = = = = = = = = = = = = = =
+
+Class # 1 ======================= Jan 21st
+"Intro to DED, review class rules. Install VSCODE - LiveShare - GitHub. Create and share their first 
+repositories with professor. Learn how to compile and use the terminal inside VS Code.
+Used: hello_world.c to fix small compile issues. terminal_intro.txt to review commands. Homework, 
+complete their Repositories and make sure gcc is installed and running."																
+=================================
+
+Class # 2 ======================= Jan 24th
+Reviewed Pointers intro, see "3. Introduction to pointers.pptx". We review and complete pointers_basics.c. 
+It had a small excercise for them. The final version of the file is already in GitHub.
+The tutoring session schedule was agreed upon, see post above.
+No homework, just keep practicing and getting familiar with everything.
+=================================
+
+
+Class # 3 ======================= Jan 28th
+4. Pointers value vs reference and pointer arithmetic.pptx. 
+Then "value_vs_reference.c" | "value_vs_reference_practice.c | "pointer_math.c" | "pointer_math_practice.c" 
+in this order. The idea is to go thru all files during class and the solved examples will be fully reviewed 
+next class once all have time to process it.																
+=================================
+
+Class # 4 ======================= Jan 31st
+"Showed solution for pointer_math_practices.c excercise together. 
+The 4th excercise is very similar to the exam, so that still remains not shown.
+Reviewed ""5. NULL pointer and VOID pointer.pptx"", slide already in the Files section here.
+Reviewed together : ""void_ptr_basic.c"" and ""void_struct_student.c"																
+=================================
+
+Class # 5 ======================= Feb 4th
+"First Half of the class: Review structs again, file ""structs.c"". 
+Put all the class to practice almost everything we have seen so far in ""structs_practice_cars.c"" where we will create an array of 4 cars and create functions to set individual cars and another to print all the array using pointer arithmetic over a struct array. Use NULL pointer validations. Use string.h in case they don't remember.
+Second half of the class: Function_pointers.ppt and get all the way thru ""func_ptr.c"" as intro. 
+Homework, study function pointers and complete structs_practice_cars.c if needed.
+
+=================================
+
+Class # 6 =======================
+
+
+=================================
+
+Class # 7 =======================
+
+
+=================================
