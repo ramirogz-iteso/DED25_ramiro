@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+typedef void (*behaviour)(char *, int);
+
 /* This function is called when student has a non probatory grade */
 void mad (char * name, int grade)
 {
@@ -49,9 +51,14 @@ void happy (char * name, int grade)
     For everyone else, run NORMAL.
 */
 
-void process_student_grade( /* COMPLETE ME */)
+void process_student_grade(behaviour f, char * n, int g)
 {
+  if(g == 100)
+  {
 
+  }
+  f(n,g);
+  
 }
 
   
@@ -63,7 +70,10 @@ int main()
   int ret = scanf("%d", &grade);
 
   /* TODO #1 call process_student_grade */
-  //process_student_grade()
+
+  behaviour f1 = happy;
+
+  process_student_grade(f1, student, grade);
 
 
 
