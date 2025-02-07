@@ -46,6 +46,8 @@ int multiply(int a, int b)
 /* The 3 share the same signature so they can be pointed by a pointer like this: */
 typedef int (*two_operand_func) (int, int);
 
+typedef int * iptr;
+
 /*
   func_f_ab_plus_c 
   la function receives a functionm pointer. and 3 integers
@@ -87,10 +89,10 @@ void func_pointers_theory()
 
   two_operand_func func = multiply;
                               
-  fun_ptr(2,4);
-  ptr2(4,2);
-  foo(5,5);
-  func(6,6);    // created with typedef
+  fun_ptr(2,4); //sum   6
+  ptr2(4,2);    //minus 2
+  foo(5,5);     // multiply 25
+  func(6,6);    // created with typedef 36
 
 
   printf("==============\n");
@@ -114,7 +116,7 @@ void func_pointers_theory()
 
   functions[0] = sum;
   functions[1] = NULL;
-  functions[2] = NULL;
+  functions[2] = multiply;
 
   for(int x = 0 ; x < 3; x++)
   {
