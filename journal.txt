@@ -39,7 +39,10 @@ Homework, study function pointers and complete structs_practice_cars.c if needed
 =================================
 
 Class # 6 =======================
-
+Reviewed solution for structs_practice_cars.c together.
+2nd pass to function pointers theory (the same of last class)
+Understood "function_pointers.c" and class got to work on "func_ptr_practice.c"
+NEXT CLASS we are looking into double pointers (**) so please study this weekend.
 
 =================================
 

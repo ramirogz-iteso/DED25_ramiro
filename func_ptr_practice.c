@@ -38,7 +38,7 @@ void happy (char * name, int grade)
 #define NORMAL 1
 #define BEST 2
 
-/* Complete the function "process_student_grade" so it receives this arrays.
+/* Complete the function "process_student_grade" so it receives the array of function,
   the student, and the grade.
 
   The function should, depending on the student, call the right function
