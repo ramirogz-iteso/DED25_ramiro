@@ -53,12 +53,7 @@ void happy (char * name, int grade)
 
 void process_student_grade(behaviour f, char * n, int g)
 {
-  if(g == 100)
-  {
-
-  }
   f(n,g);
-  
 }
 
   
