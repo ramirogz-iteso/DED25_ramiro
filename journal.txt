@@ -47,6 +47,10 @@ NEXT CLASS we are looking into double pointers (**) so please study this weekend
 =================================
 
 Class # 7 =======================
-
+Review the solution of func_ptr_practice
+We reviewed double pointer theory using the first link we found in google.
+Remember to use the university of youtube, is really good.
+Reviewed array_pointers_dptr.c together.
+HOMEWORK: review that file again on your own, its really important.
 
 =================================

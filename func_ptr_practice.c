@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
-typedef void (*behaviour)(char *, int);
+#include <string.h>
 
 /* This function is called when student has a non probatory grade */
 void mad (char * name, int grade)
@@ -40,7 +39,7 @@ void happy (char * name, int grade)
 #define NORMAL 1
 #define BEST 2
 
-/* Complete the function "process_student_grade" so it receives the array of function,
+/* Complete the function "process_student_grade" so it receives this arrays.
   the student, and the grade.
 
   The function should, depending on the student, call the right function
@@ -51,26 +50,60 @@ void happy (char * name, int grade)
     For everyone else, run NORMAL.
 */
 
-void process_student_grade(behaviour f, char * n, int g)
+typedef void (* greeting) (char* name, int grade);
+
+void process_student_grade(greeting *f, char *s, int g)
 {
-  f(n,g);
+
+  greeting function_to_execute;
+
+   if(g == 100)
+     function_to_execute = f[BEST];
+  else if(g >= 60)
+     function_to_execute = f[NORMAL];
+  else
+    function_to_execute = f[MAD];
+
+  /* finally run the right function */
+  function_to_execute(s, g);
+
+  /*
+  if(g == 100)
+     f[BEST](s,g);
+  else if(g >= 60)
+     f[NORMAL](s,g);
+  else
+    f[MAD](s,g); */
 }
 
+typedef struct s
+{
+  char name[10];
+  int grade;
+  greeting f;
+} s;
+
+void process_student(s * sptr)
+{
+  sptr->f(sptr->name, sptr->grade);
+}
   
 int main()
 {
-  char student[10] = "Peter";
+  char student[10] = "Ramiro";
   int grade;
   printf("Enter your grade... ");
   int ret = scanf("%d", &grade);
 
+  greeting messages[3];
+  //void (* greeting2[3]) (char* name, int grade);
+  
+  messages[MAD] = mad;
+  messages[NORMAL] = normal;
+  messages[BEST] = happy;
+
   /* TODO #1 call process_student_grade */
-
-  behaviour f1 = happy;
-
-  process_student_grade(f1, student, grade);
-
-
+  process_student_grade (messages, student, grade);
 
   /* TODO #2 Now that we think about, would it be nice for the 
   function to be embeeded inside a student structure? 
@@ -89,4 +122,12 @@ int main()
   Here you will learn that funcitons pointers can be stored
   inside another object. Use pointers 
   */
+  s s1;
+  strcpy(s1.name, "PERFECT");
+  s1.grade = 100;
+  s1.f = happy;
+
+  process_student(&s1);
+
+
 }
