@@ -1,0 +1,30 @@
+
+Things you should ALREADY know:
+  structs
+  typedef | defines
+  basic data types {int, char, arrays, structs, float}
+
+New this class (term #1): (parcial 1)
+  Poiters 
+    (pointer_basics.c)
+  Pointer arithmetic
+    (pointer_math.c)
+    (pointer_math_practice.c)
+  Pointes to structures  ( struct.elem vs struct->elem)
+    (structs.c)
+    (struct_practice_cars.c)
+  Passing variables as Value or referece.
+    (value_vs_reference.c)
+    (value_vs_reference_practice.c)
+  Function pointers
+    (func_pointers.c)
+    (func_ptr_challenge.c)
+  VOID pointer
+    (void_ptr_basics.c)
+    (void_structs_student.c)
+  Array of pointers (ptr **)
+    (array_pointers_dptr.c)
+
+The exercise (challenge.c) contains a good practice for the exam.
+
+EXAM: FEB 25TH!
