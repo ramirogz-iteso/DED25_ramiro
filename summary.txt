@@ -28,3 +28,5 @@ New this class (term #1): (parcial 1)
 The exercise (challenge.c) contains a good practice for the exam.
 
 EXAM: FEB 25TH!
+
+One more line
