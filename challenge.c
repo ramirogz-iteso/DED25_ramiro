@@ -35,6 +35,7 @@
   FOR EXTRA FUN (this could be in the exam!)
   Can you do it in a way that process function only receives one and only 
   one argumment? (please add a new function, don't delete the old one)
+  DO NOT USE A STRUCT!
 
      ex :   process_one(all_data_into_one);
      
