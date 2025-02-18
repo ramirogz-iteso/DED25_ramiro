@@ -142,36 +142,3 @@ void process(int **dptr, f f1)
   }
 }
 
-// general rule for passing arrays is: pointer to the type
-void process_v(int * void, f f1)
-{
-  int **adptr = dptr;
-  printf("[0] %d ", *dptr[0]);
-  printf("[0] %d ", *dptr[1]);
-
-  printf("\n");
-  // printf("[0] %d ", **adptr);
-  //  adptr++;
-  //  printf("[0] %d ", **adptr);
-
-  printf("\n");
-
-  int *a1 = *adptr;
-  adptr++;
-  int *a2 = *adptr;
-  // using pointer math
-  for (int x = 0; x <= 4; x++)
-  {
-    // printf("%d ", *a1);
-    f1(*a1);
-    a1++;
-  }
-  printf("\n");
-  // using pointer math
-  for (int x = 0; x <= 4; x++)
-  {
-    // printf("%d ", *a2);
-    f1(*a2);
-    a2++;
-  }
-}
