@@ -54,3 +54,13 @@ Reviewed array_pointers_dptr.c together.
 HOMEWORK: review that file again on your own, its really important.
 
 =================================
+
+Class # 8 =======================
+Challange.c 
+
+=================================
+
+Class # 9 =======================
+Challange.c 
+
+=================================
