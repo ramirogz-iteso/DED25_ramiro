@@ -46,3 +46,85 @@
   SEGMENTATION FAULT
 
 */
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_CARS 4
+
+typedef struct vehicle
+{
+  char brand[20];
+  int year;
+} vehicle;
+
+int print_lot ( vehicle *, char *);
+void vehicle_set ( vehicle *, char *, int );
+
+int main()
+{
+   vehicle cars[4];
+   char v4name[20];
+   int v4year;
+   char oldest[20];
+
+   while(1)
+   {
+      printf("aaaaaaaa\n");
+   }
+  
+   //step 1: init vehicle # 1 without pointers:
+   strcpy(cars[0].brand, "Honda");
+   cars[0].year = 2013;
+
+   //step 2: set up vehicles 2 and 3 using my function and static data
+   vehicle *vptr = &cars[1];
+   vehicle_set(vptr, "TOYOTA", 2022);
+   vehicle_set(&cars[2], "FORD", 1990);
+
+   //step 3: set up the last vehicle with user input
+   printf("Enter the name of the last vehicle: ");
+   scanf("%s", v4name);
+   printf("Enter the model (year) of the last vehicle: ");
+   scanf("%d", &v4year);
+   vehicle_set(vptr+2, v4name, v4year); //where is vptr pointing to?
+   
+   //step 4: PRINT ALL!
+   print_lot(cars, oldest );
+   /*
+   printf("Hello world! I have only 1 vehicle\n");
+   for(int x = 0; x<4; x++)
+     printf("name: %s, year %d\n", cars[x].brand, cars[x].year);
+
+   */  
+   return 0;
+}
+
+void vehicle_set(vehicle * v, char * c, int y)
+{
+  strcpy(v->brand, c);
+  v->year = y;
+}
+
+
+int print_lot( vehicle *v, char * oldest_name)
+{
+  vehicle * vptr = v;
+  int oldest_year = v->year;
+  int oldest_idx = 0;
+
+  printf(" ==== PRINT LOT: ===\n");
+  for(int x = 0; x < MAX_CARS; x++)
+  {
+   printf("comparing %d with %d\n", vptr->year, oldest_year);
+   if(vptr->year < oldest_year)
+   {
+      oldest_year = vptr->year;
+      oldest_idx = x;
+   }
+   printf("\tname: %s, year %d\n", vptr->brand, vptr->year);
+   vptr++;
+  }
+  printf("Oldest found at idx [%d]\n", oldest_idx);
+  return 0;
+}

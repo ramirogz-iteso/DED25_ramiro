@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/* 
   CHALLENGE!
   Arrays, pointers to pointer, function pointers and void pointers
 
@@ -28,117 +28,125 @@
 
   TIP:
   You can do this in two phases to verify this works:
-
+  
   PHASE 1: process receives the array of arrays, and function pointer
   PHASE 2: process receives the void * and the function pointer
-
+  
   FOR EXTRA FUN (this could be in the exam!)
-  Can you do it in a way that process function only receives one and only
-  one argumment? (please add a new function, don't delete the old one)
-  DO NOT USE A STRUCT!
-
-     ex :   process_one(all_data_into_one);
-
+  Can you do it in a way that process function only receives one and only 
+  one void pointer?
+  
+     ex :   process ((void*)all_data_into_one);
   GOOD LUCK!
 */
 
-void print_star(int b)
-{
-  while (b--)
-  {
-    printf("|*|");
-  }
-  printf("\n");
+void print_star(int b) {while(b--) printf("|*|"); printf("\n");}
+
+// *** DELETE THIS BEFORE SHARING *****
+typedef void (*print_ptr)(int b);
+void process(int **, print_ptr);
+void process_v(void *, print_ptr);
+void process_single_v(void *);
+// *** DELETE THIS BEFORE SHARING *****
+
+int main() {
+
+  int arrA[5] = {5,4,3,2,1};
+  int arrB[5] = {2,2,4,4,5};
+
+  int * arrays[2] = {arrA, arrB};
+  int ** dptr = arrays;
+
+  process(dptr, print_star);
+  printf("\n\n=============\n\n");
+  getchar();
+  void * v = (void *) dptr;
+  process_v((void *)dptr, print_star);
+
+  printf("\n\n=============\n\n");
+  void * data[4];
+  int num = 5;
+  data[0] = arrA;
+  data[1] = arrB;
+  data[2] = &num;
+  data[3] = print_star;
+  process_single_v((void *)data);
+  
+  return 0;
 }
 
-//declare the function pointer here
-typedef void (*f)(int);
+void process(int ** all, print_ptr p) 
+{  
+  int * arr1 = NULL;
+  int * arr2 = NULL;
 
+  // [0] contains first array
+  arr1 = *all;
+  for(int i = 0; i<5; i++, arr1++)
+  {
+    p(*arr1);
+    //printf("%d ", *arr1);
+  }
+  all++;
 
-void print_array(int *);
-void process(int **, f s);
-
-
-int main()
-{
-  // all int
-  int arrA[5] = {5, 4, 3, 2, 1};
-  int arrB[5] = {2, 2, 4, 4, 5};
-
-  printf("arrA[0] %p\n", &arrA[0]);
-  printf("arrB[0] %p\n", &arrB[0]);
-
-  //
-  //[ArrA, ArrB]
-  int *arrX[2] = {arrA, arrB};
-
-  // print_star(10);
-
-  // basic poointer reminder
-  int var = 5;       // var = 5 , addr 0x1
-  int *ptr = &var;   // ptr = 0x1 , adrr 0xFF
-  int **dptr = &ptr; // dptr = 0xFF , addr  0x20
-
-  ptr = arrA;
-  print_array(ptr);
-
-  dptr = arrX;
-
-  printf("==================\n");
-  f f1 = print_star;
-  process(dptr, f1);
+  arr2 = *all;
+  for(int i = 0; i<5; i++, arr2++)
+  {
+    p(*arr2);
+  }
+  all++;
 }
 
-// general rule for passing arrays is: pointer to the type
-void print_array(int *a)
+void process_v(void * data, print_ptr p) 
 {
-  printf("%d\n", a[4]);
-  printf("%d\n", *(a + 4));
+  int ** all = (int **)data;
+  
+  int * arr1 = NULL;
+  int * arr2 = NULL;
 
-  // using brackets
-  for (int x = 0; x <= 4; x++)
+  // [0] contains first array
+  arr1 = *all;
+  for(int i = 0; i<5; i++, arr1++)
   {
-    printf("%d ", a[x]);
+    p(*arr1);
   }
-  // using pointer math
-  for (int x = 0; x <= 4; x++)
+  all++;
+
+  arr1 = *all;
+  for(int i = 0; i<5; i++, arr1++)
   {
-    printf("%d ", *a);
-    a++;
+    p(*arr1);
   }
+  all++;
 }
+/*
+     int x = 10;
+     int *ptri = &x;
 
-// general rule for passing arrays is: pointer to the type
-void process(int **dptr, f f1)
+     printf("%d", ptri);  0xFFFFA
+     printf("%d", *ptri);
+
+  */
+// This could come in the exam!
+
+void process_single_v(void * data)
 {
-  int **adptr = dptr;
-  printf("[0] %d ", *dptr[0]);
-  printf("[0] %d ", *dptr[1]);
-
-  printf("\n");
-  // printf("[0] %d ", **adptr);
-  //  adptr++;
-  //  printf("[0] %d ", **adptr);
-
-  printf("\n");
-
-  int *a1 = *adptr;
-  adptr++;
-  int *a2 = *adptr;
-  // using pointer math
-  for (int x = 0; x <= 4; x++)
+  // *** DELETE THIS BEFORE SHARING *****
+  void ** all = (void **)data;
+  int * arr1 = all[0];
+  int * arr2 = all[1];
+  int num = *(int *) all[2];
+  print_ptr p = (print_ptr)all[3];
+  
+  for(int i = 0; i < num; i++)
   {
-    // printf("%d ", *a1);
-    f1(*a1);
-    a1++;
+    p(*arr1);
+    arr1++;
   }
-  printf("\n");
-  // using pointer math
-  for (int x = 0; x <= 4; x++)
+  for(int i = 0; i < num; i++)
   {
-    // printf("%d ", *a2);
-    f1(*a2);
-    a2++;
+    p(*arr2);
+    arr2++;
   }
+  // *** DELETE THIS BEFORE SHARING *****
 }
-
