@@ -56,7 +56,8 @@ HOMEWORK: review that file again on your own, its really important.
 =================================
 
 Class # 8 =======================
-Challange.c 
+Challange.c All the class was spent with the students doing their best to solved
+this file. This is a good example of how challenging the exam will be.
 
 =================================
 
