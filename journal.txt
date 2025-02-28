@@ -61,6 +61,20 @@ Challange.c
 =================================
 
 Class # 9 =======================
-Challange.c 
+Solution to Challenge.c
+We reviewed Random.c to generate random numbers, this will be useful in the project.
+We reviewed the project description.
+
+=================================
+
+Class # 10 =======================
+Malloc / Calloc / Free
+TODO 
+
+=================================
+
+
+Class # 11 =======================
+Exam1
 
 =================================
