@@ -70,12 +70,25 @@ We reviewed the project description.
 
 Class # 10 =======================
 Malloc / Calloc / Free
-TODO 
+Exam1 day was here, but I wanted to use B class instead of T. 
+We started looking Dynamic memory and reviewed "Dynamic Memory.c"
+The powerpoint has some exercise to practice and verify what malloc / calloc and free does.
+PENDING I need to code the solution for this and update the slides.
 
 =================================
 
 
 Class # 11 =======================
-Exam1
+Exam1 day!
+
+=================================
+
+Class # 12 =======================
+We reviewed the exam solutions, exercise by exercise. Everyone who completed the examen in FULL, and send
+it to the professor AND completed all his previous excercise was considered for up to 20 points.
+Took a quick glance at the malloc powerpoint to refresh the topic before covering:
+malloc.c where we practice how to create new variables with dynamic memory.
+We continued with "8. Matrix and 2D arrays with malloc.ppt" to understand how 2D arrays work.
+Started working in malloc2d.c to learn how to use 2D Arrays. Solution will be shared next class.
 
 =================================
