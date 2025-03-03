@@ -12,12 +12,12 @@ int main()
   int x = 10; // this is static, not this
   int *iptr = (int *) malloc (sizeof(int));
   //or
-  //int *i = NULL;
-  //i = (int *) malloc (4);
+  int *i = NULL;
+  i = (int *) malloc (4);
 
   //to give value, we need to derefence the pointer, but we already know this :) 
-  //*iptr = 10;
-  //* i   = 10;
+  *iptr = 10;
+  * i   = 10;
    
   printf("the value of iptr and i is both %d %d\n", *i, *iptr);
   getchar();
