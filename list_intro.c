@@ -15,13 +15,6 @@ node * create_node(int num)
   return new_node;
 }
 
-node * create_stack_node(int num)
-{
-  node * n = (node *)malloc(sizeof(node));
-  n->num = num;
-  return n;
-}
-
 void static_node_example()
 {
   node n1, n2, n3;
@@ -72,15 +65,10 @@ void dynamic_node_example()
         Print the number stored in tmp
         Move tmp to the next node   */
 
-  while(tmp != NULL)
-  {
-    printf("%d -> ", tmp->num);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
-  
-  /* EXERCISE 2: Add a node at the end of the list and print again to verify */
 
+  
+  /* EXERCISE 2: Add a node at the end of the list and print 
+  again to verify */
   node * new_node = create_node(10);
 
   /* Algorithm: 
@@ -105,55 +93,18 @@ void dynamic_node_example()
             // at NULL in the previous operation.
             // Segmentation fault if this is not done.
 
-  while(tmp->next != NULL)
-  {
-    printf("%d -> ", tmp->num);
-    tmp = tmp->next;
-  }
-  printf("we have tmp over [%d] node ... \n", tmp->num);
-  tmp->next = new_node;
-
   // Test print again
-  tmp = n1;
-  while(tmp != NULL)
-  {
-    printf("%d -> ", tmp->num);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
 
   /* How many pointers do we need to traverse and store a list?
   Just 1: The root (or header), as long as all nodes are linked
   to each other and the last node points to NULL. */
 
-  /* Finally, add an element after node [2] */
+  /* Finally, add an element after node [2]
+  Print one last time to verify
+  
+  1 -> 2 -> 5 -> 3 -> 10 -> NULL       */
   new_node = create_node(5);
-  tmp = n1;
-  node *back;
-  while(tmp != NULL)
-  {
-    if(tmp->num == 2)
-    {
-      node * next = tmp->next;
-      tmp->next = new_node;
-      new_node->next = next;
-      break;
-    }
-    else
-    {
-      back = tmp;
-      tmp = tmp->next;
-    }
-  }
 
-   // Test print again
-  tmp = n1;
-  while(tmp != NULL)
-  {
-    printf("%d -> ", tmp->num);
-    tmp = tmp->next;
-  }
-  printf("NULL\n");
 }
 
 int main()
