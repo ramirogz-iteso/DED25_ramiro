@@ -24,8 +24,6 @@ typedef struct
     void * actions;
     magAttFuncPtr magicPtr[3];
 }Pokemon;
-
-//1st Project RAUL ALEJANDRO CAMPOS ALCARAZ 753699
  
 //Originally this was setted-up for 5 pokemons, 11  attacks and have multiple pokemons in a team , but for time issues,
 //2 pokemon and 5 attacks are fully playable, so this code is easy to escalate and bring more pokemons and magic

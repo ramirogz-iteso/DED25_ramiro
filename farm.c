@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#define CLEAR printf("\033[0;0H\033[2J");
 
 typedef struct chicken
 {
@@ -24,11 +25,45 @@ chicken * create_chicken(int id)
   return new_chicken;
 }
 
-void print_all(chicken ** farm, int farm_size)
+int add_chicken(chicken ** farm, int size)
+{
+  for(int x = 0; x < size; x++)
+  {
+    if(farm[x] == NULL)
+    {
+      farm[x] = create_chicken(x);
+      return 1;
+    }
+  }
+  //if we get to this point we fail to find an empty slot. no new chicken added
+  return 0;
+}
+
+void freeweaks(chicken ** farm, int size)
+{
+  printf("Freeing average chickens (hp <50)\n");
+  for(int x = 0; x < size; x++)
+  {
+    if(farm[x]!= NULL && farm[x]->hp <= 50)
+    {
+      printf("Found a weak chicken at: %d let it fly!\n", x);
+      free(farm[x]);
+      farm[x] = NULL;
+    } 
+  }
+}
+
+void deletechicken(chicken ** farm, int idx)
+{
+  free(farm[idx]);
+  farm[idx] = NULL;
+}
+
+void print_all(chicken ** farm, int size)
 {
   printf(" = = WELCOME TO THE FARM = =\n");
   //chicken * p = NULL; 
-  for(int i=0; i < farm_size; i++)
+  for(int i=0; i < size; i++)
   {
     printf("[%d] : ", i);
 
@@ -61,11 +96,11 @@ void print_all(chicken ** farm, int farm_size)
     [3] : chicken with ID 3 hp 70 */  
 }
 
+
 int main()
 {
   srand (time(NULL));
-  int FARMSIZE = 10;
-  
+
   //size of chicken 
   //    /* <= drop // to kill all code below
   chicken bigfarm[250];
@@ -105,9 +140,10 @@ int main()
 
   /* Lets create all the farm at once using dynamic memory */
   /* step one, create top level */ 
+  int FARMSIZE = 10;
   chicken ** farm = (chicken **) malloc(sizeof(chicken *) * FARMSIZE);
 
-  for(int x; x < FARMSIZE; x++)
+  for(int x = 0; x < FARMSIZE; x++)
     farm[x] = NULL;
 
   farm[0] = c1;
@@ -138,15 +174,24 @@ int main()
 
 
   //TODO
-  //We DON'T like WEAK chickens, free the chickens that are weak
-  //weak = hp < 30; 
-
-
+  //We DON'T like WEAK chickens, free the chickens that are weak (hp < 30)
+  for(int x = 0; x < FARMSIZE; x++)
+  {
+    if(farm[x] != NULL && farm[x]->hp <= 30)
+    {
+      printf("Found a weak chicken at: %d let it fly!\n", x);
+      free(farm[x]);
+      farm[x] = NULL;
+    }
+  }
 
   //TODO
   //Print the farm again, verify that we freed those little useless chickens
   // I want to be able to see the "FREE" slots.
-
+  printf("After freeing weak chickens... \n");
+  getchar();
+  print_all(farm, FARMSIZE);
+  getchar();
 
   //TODO
   //We need to refill those chickens, but its going to be a pain 
@@ -156,12 +201,91 @@ int main()
   // the ID of the newly created chicken MUST correspond to the slot
   // ON SUCCESS the function returns 1. ON FAIL returns 0
   
+  while(add_chicken(farm, FARMSIZE) == 1)
+  {
+    printf("Chicken refilled succesfully\n");
+    getchar();
+  };
+
+  print_all(farm, FARMSIZE);
+  getchar();
 
   //FINAL TODO
   //Use a while / switch - case to the program to add user interaction to it.
   //Add function that allows you add your own chicken at the slot that you want
   //    // ON SUCCESS the function returns 1. ON FAIL returns 0
   //Add a function to double the farm size if no more chickes can be added
+
+  printf("Entering interactive / MANUAL mode now.... \n");
+
+  int exit = 1;
+  int opc = 0;
+  int result; 
+  int idx;
+
+  CLEAR;
+
+  while(exit)
+  {
+    printf("Select one of the following options:\n");
+    printf("\t 1) Print farm\n");
+    printf("\t 2) Free weaks\n");
+    printf("\t 3) Add chicken\n");
+    printf("\t 4) Add chicken at ... \n");
+    printf("\t 5) delete chicken\n");
+    printf("\t 6) expand farm size (double it)\n");
+    printf("\t 7) exit and destroy\n");
+    printf("\t\t SELECT : ");
+
+    scanf("%d", &opc);
+    getchar();
+
+    switch(opc)
+    {
+      case 1:
+        print_all(farm, FARMSIZE);
+        getchar();
+      break;
+
+      case 2:
+        freeweaks(farm, FARMSIZE);
+        getchar();
+      break;
+      case 3:
+        
+        result = add_chicken(farm, FARMSIZE);
+        if (result)
+          printf("Your chicken was added succesfully\n");
+        else
+          printf("FARM FULL cannot add anymore\n");
+      break;
+      case 4:
+      break;
+      case 5:
+        printf("which chicken? (IDX): ");
+        scanf("%d", &idx);
+        deletechicken(farm, idx);
+      break;
+      case 6:
+        printf("Expanding size of farm from %d to .... %d\n", FARMSIZE, FARMSIZE*2);
+        int oldsize = FARMSIZE;
+        FARMSIZE = FARMSIZE * 2;
+        farm = realloc(farm, FARMSIZE * sizeof(chicken *));
+      
+        // NULL all new pointers we just created.
+        for(int x=oldsize; x<FARMSIZE; x++)
+        {
+          farm[x] = NULL;
+        }
+        printf("done!");
+      break;
+      case 7:
+      break;
+    }
+    
+    getchar();
+    CLEAR;
+  }
 
   /* EXAMPLE     :
 

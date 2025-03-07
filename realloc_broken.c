@@ -96,20 +96,20 @@ void print_all(chicken ** farm, int size)
     [3] : chicken with ID 3 hp 70 */  
 }
 
-void expandfarm(chicken ** farm, int size)
+chicken ** expandfarm(chicken ** f, int size)
 {
   int oldsize = size;
   int newsize = size * 2;
 
-  farm = realloc(farm, newsize * sizeof(chicken *));
+  f = realloc(f, newsize * sizeof(chicken *));
 
   // NULL all new pointers we just created.
   printf("Nulling pointers from farm[%d] to farm[%d]\n", size, newsize);
   for(int x=size; x<newsize; x++)
   {
-    farm[x] = NULL;
+    f[x] = NULL;
   }
-
+  return f;
 }
 
 int main()
@@ -283,7 +283,7 @@ int main()
       break;
       case 6:
         printf("Expanding size of farm from %d to .... %d\n", FARMSIZE, FARMSIZE*2);
-        expandfarm(farm, FARMSIZE);
+        farm = expandfarm(farm, FARMSIZE);
         FARMSIZE = FARMSIZE * 2;
         printf("done!");
       break;
