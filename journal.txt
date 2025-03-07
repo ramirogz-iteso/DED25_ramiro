@@ -1,6 +1,9 @@
 
 = = = = = = = = = = = = = = = = O U R    D I A R Y  = = = = = = = = = = = = = = = =
 
+###################
+   W E E K   # 1
+###################
 Class # 1 ======================= Jan 21st
 "Intro to DED, review class rules. Install VSCODE - LiveShare - GitHub. Create and share their first 
 repositories with professor. Learn how to compile and use the terminal inside VS Code.
@@ -15,6 +18,10 @@ The tutoring session schedule was agreed upon, see post above.
 No homework, just keep practicing and getting familiar with everything.
 =================================
 
+###################
+   W E E K   # 2
+###################
+Class # 1 =================
 
 Class # 3 ======================= Jan 28th
 4. Pointers value vs reference and pointer arithmetic.pptx. 
@@ -30,6 +37,9 @@ Reviewed ""5. NULL pointer and VOID pointer.pptx"", slide already in the Files s
 Reviewed together : ""void_ptr_basic.c"" and ""void_struct_student.c"																
 =================================
 
+###################
+   W E E K   # 3
+###################
 Class # 5 ======================= Feb 4th
 "First Half of the class: Review structs again, file ""structs.c"". 
 Put all the class to practice almost everything we have seen so far in ""structs_practice_cars.c"" where we will create an array of 4 cars and create functions to set individual cars and another to print all the array using pointer arithmetic over a struct array. Use NULL pointer validations. Use string.h in case they don't remember.
@@ -45,6 +55,9 @@ Understood "function_pointers.c" and class got to work on "func_ptr_practice.c"
 NEXT CLASS we are looking into double pointers (**) so please study this weekend.
 
 =================================
+###################
+   W E E K   # 4
+###################
 
 Class # 7 =======================
 Review the solution of func_ptr_practice
@@ -60,6 +73,10 @@ Challange.c All the class was spent with the students doing their best to solved
 this file. This is a good example of how challenging the exam will be.
 
 =================================
+
+###################
+   W E E K   # 5
+###################
 
 Class # 9 =======================
 Solution to Challenge.c
@@ -77,10 +94,12 @@ PENDING I need to code the solution for this and update the slides.
 
 =================================
 
+###################
+   W E E K   # 6
+###################
 
 Class # 11 =======================
 Exam1 day!
-
 =================================
 
 Class # 12 =======================
@@ -90,5 +109,113 @@ Took a quick glance at the malloc powerpoint to refresh the topic before coverin
 malloc.c where we practice how to create new variables with dynamic memory.
 We continued with "8. Matrix and 2D arrays with malloc.ppt" to understand how 2D arrays work.
 Started working in malloc2d.c to learn how to use 2D Arrays. Solution will be shared next class.
+=================================
+
+###################
+   W E E K   # 7
+###################
+
+Class # 13 =======================
+Start class reviewing the solution for malloc2d.c the complete file is now in GITHUB to study.
+We reviewed how to expand the idea of 2D matrixes to create arrays of pointers (pointers to structs)
+We started the file "farm.c" which has a nice example of how we can dynamically create and expand the size
+of an array made of struct pointers. The structs are created on demand so the memory is used really efficiently.
 
 =================================
+
+Class # 14 =======================
+==================================
+
+
+###################
+   W E E K   # 8
+###################
+
+Class # 15 =======================
+==================================
+
+Class # 16 =======================
+==================================
+
+###################
+   W E E K   # 9
+###################
+
+Class # 17 =======================
+==================================
+
+Class # 18 =======================
+==================================
+
+
+###################
+   W E E K   # 10
+###################
+
+Class # 19 =======================
+==================================
+
+Class # 20 =======================
+==================================
+
+
+###################
+   W E E K   # 11
+###################
+
+Class # 21 =======================
+==================================
+
+Class # 22 =======================
+==================================
+
+
+###################
+   W E E K   # 12
+###################
+
+Class # 23 =======================
+==================================
+
+Class # 24 =======================
+==================================
+
+###################
+   W E E K   # 13
+###################
+
+Class # 25 =======================
+==================================
+
+Class # 26 =======================
+==================================
+
+###################
+   W E E K   # 14
+###################
+
+Class # 27 =======================
+==================================
+
+Class # 28 =======================
+==================================
+
+###################
+   W E E K   # 15
+###################
+
+Class # 29 =======================
+==================================
+
+Class # 30 =======================
+==================================
+
+###################
+   W E E K   # 16
+###################
+
+Class # 31 =======================
+==================================
+
+Class # 32 =======================
+==================================

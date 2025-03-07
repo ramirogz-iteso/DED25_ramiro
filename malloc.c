@@ -53,7 +53,7 @@ int main()
   char name_s[20] = {"Ramiro"};   // this is static, not this
 
   //malloc
-  char * name = malloc (sizeof(char)*20);
+  char * name = (char*) malloc (sizeof(char)*20);
   printf("Input your name: ");
   int ret = scanf("%s", name);
   /* 3.1 print it */

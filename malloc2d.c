@@ -60,9 +60,10 @@ int main()
 
   char ** banner = malloc (sizeof(char *) * 3);
 
+  banner[2] = malloc(sizeof(char) * 21);
   banner[0] = malloc(sizeof(char) * 8);
   banner[1] = malloc(sizeof(char) * 3);
-  banner[2] = malloc(sizeof(char) * 21);
+  
 
   strcpy(banner[0], "WELCOME");
   strcpy(banner[1], "TO");
@@ -71,6 +72,9 @@ int main()
   /* can you print it using pointer math :) ? */
   char ** charp = banner;
   printf("%s %s %s\n", *charp, *(charp+1), *(charp+2));
+
+  charp++;
+  char * letter = *charp;
 
 
   /* can you print it with brackers [] ? */
