@@ -125,7 +125,12 @@ of an array made of struct pointers. The structs are created on demand so the me
 
 Class # 14 =======================
 ==================================
-
+We saw the solution for the entire farm excercise. You can find it at farm.c. (complete version)
+Linked List! we saw the theory of why linked list are important and review all operatiosn in the
+whiteboard (add_to_end, add_before, print_or_traverse etc).
+We are going to be working for the next two classes on linkedlist.c, your task is to complete it.
+For those who missed the class and the live explanation on the board, I made my previous classes
+avaialable in teams (in spanish).
 
 ###################
    W E E K   # 8
@@ -133,6 +138,9 @@ Class # 14 =======================
 
 Class # 15 =======================
 ==================================
+Finishing linkedlist.c, all students invest more individual time to review the excercise.
+Complete double linked list.
+
 
 Class # 16 =======================
 ==================================
