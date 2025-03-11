@@ -96,6 +96,13 @@ int main()
   node *n = newNode(50);
   header = n;
 
+  printf("hello world\n");
+  printlist(header);
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+
   /* #3:
   Create 5 additional nodes, so that we have a total list of 5 nodes
   properly linked together. Write a function
