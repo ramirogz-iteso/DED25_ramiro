@@ -1,0 +1,6 @@
+dia 5 ventas $100.50 articulos 15
+dia 6 ventas $210.99 articulos 21
+dia 7 ventas $10 articulos 1
+dia 8 ventas $150 articulos 25
+dia 9 ventas $1200 articulos 150
+dia 19 ventas $200 articulos 50

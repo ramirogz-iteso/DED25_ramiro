@@ -18,22 +18,47 @@ int count = 0;
 // Push() operation to insert elements into the stack 
 void push(int data) 
 {
-
+  /* Insertion is always possible, create the node */
+  stack_node * new_node  = (stack_node *) malloc(sizeof(stack_node));
+  new_node->info = data;
+  
+  /* If it is the first node in the stack */
+  if (stack_top == NULL)
+    stack_top = new_node;
+  else
+    new_node->prev = stack_top;
+  
+  stack_top = new_node;
+  count++;
   printf("\tnode inserted\n");
 }
 
 // For this version of the integer stack, it returns -1 if there is nothing to pop
 int pop() 
 {
+  stack_node *nptr = stack_top;
 
-  return 0;
+  if (nptr == NULL)
+  {
+      printf("\nStack Underflow\n");
+      return -1;
+  }
+  else
+  {
+    nptr = nptr->prev;
+  }
+
+  int popped = stack_top->info;
+  free(stack_top);
+  stack_top = nptr;
+  count--;
+  return popped;
 }
 
 // Displays the current elements in the stack
 void display() 
 {
   stack_node * nptr = stack_top;
-  
   if (nptr == NULL)
   {
       printf("\nStack Underflow\n");
