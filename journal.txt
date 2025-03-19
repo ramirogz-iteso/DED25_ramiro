@@ -140,20 +140,28 @@ Class # 15 =======================
 ==================================
 Finishing linkedlist.c, all students invest more individual time to review the excercise.
 Complete double linked list.
-
-
 Class # 16 =======================
 ==================================
-
+STACK INTRO
+We reviewed ppt 9 Stacks Intro. With all the logic behind creating a simple stack.
+TODO: complete stack_integers.c and stack_formula_validator.c as homework.
 ###################
    W E E K   # 9
 ###################
-
 Class # 17 =======================
 ==================================
+CHALLEGE! Starting coding the exercise to expand a linked list.
+See expand.c for instructions.
 
 Class # 18 =======================
 ==================================
+FILES!
+We will review the solution to the "stack_formula_validator.c"
+Text files, read and write from common txt files
+Make the teams for the project (Maze game) 
+See. Files.ppt
+files_intro.c
+files_practice.c
 
 
 ###################

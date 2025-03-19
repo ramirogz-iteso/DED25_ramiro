@@ -20,12 +20,11 @@ void push(int data)
 {
   /* Insertion is always possible, create the node */
   stack_node * new_node  = (stack_node *) malloc(sizeof(stack_node));
+  new_node->prev = NULL;
   new_node->info = data;
-  
+
   /* If it is the first node in the stack */
-  if (stack_top == NULL)
-    stack_top = new_node;
-  else
+  if (stack_top != NULL)
     new_node->prev = stack_top;
   
   stack_top = new_node;
