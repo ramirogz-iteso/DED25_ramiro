@@ -156,24 +156,23 @@ See expand.c for instructions.
 Class # 18 =======================
 ==================================
 FILES!
-We will review the solution to the "stack_formula_validator.c"
 Text files, read and write from common txt files
 Make the teams for the project (Maze game) 
 See. Files.ppt
 files_intro.c
 files_practice.c
 
-
 ###################
    W E E K   # 10
 ###################
-
 Class # 19 =======================
 ==================================
+We will review the solution to the "stack_formula_validator.c"
+We will review binary files and work in Farms binary
 
 Class # 20 =======================
 ==================================
-
+TDA Class or somethinG new
 
 ###################
    W E E K   # 11
@@ -181,7 +180,8 @@ Class # 20 =======================
 
 Class # 21 =======================
 ==================================
-
+EXAM #2 (April 1st)
+ 
 Class # 22 =======================
 ==================================
 

@@ -1,0 +1,4 @@
+Building D 500 students
+Building T 700 students
+Building Z 100 students
+Building X 50 students

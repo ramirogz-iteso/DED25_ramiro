@@ -74,7 +74,7 @@ void fprintf_example()
   if(fptr == NULL)
   {
     printf("Error!");
-    exit(1);
+    exit(0);
   }
 
   fprintf(fptr, "Students=%d\n", num); 
@@ -181,7 +181,7 @@ void fread_example()
 void fscanf_example()
 {
   FILE *fptr;    //PATH
-  fptr = fopen("fscanf_ejemplo.txt", "r");
+  fptr = fopen("fscanf_example.txt", "r");
 
   char building;
   int capacity;
