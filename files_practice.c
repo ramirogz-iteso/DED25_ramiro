@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 
 /* I/O File Reading: */
 
@@ -18,7 +17,7 @@ int main()
   */
 
   /* Calculate the average cost per item per day and write it
-     in ANOTHER FILE (ventas_promedio.txt), 
+     in ANOTHER FILE (average_sales.txt), 
      each line should be formatted as follows:
 
      MONTHLY AVERAGES
@@ -26,40 +25,16 @@ int main()
      day 6 average $10.04
      ..
   */
-
-  FILE *ventas = fopen("ventas.txt", "r+");
-  FILE *promedios = fopen("ventas_promedio.txt", "w");
-  int day;
-  float cost;
-  int items;
-  int ret;
-  char c;
-
-  fputs("MONTHLY AVERAGES\n", promedios);
-
-  while((ret=fscanf(ventas, "day %d sales $%f items %d\n", 
-                &day, &cost, &items)) != EOF)
-  {
-    printf("read from file %d %f %d\n", day, cost, items);
-    fprintf(promedios, "day %d average %f\n", day, cost/(float)items);
-    getchar();
-    printf("loop\n");
-  }
-
-  fputs("\nAVERAGES WRITTEN IN ventas_promedio.txt", ventas);
-
-  fclose(ventas);
-  fclose(promedios);
   
-  /* After finishing writing in ventas_promedio.txt, return
-     to ventas.txt and write the following message on a new line:
-     AVERAGES WRITTEN IN ventas_promedio.txt
+  /* After finishing writing in average_sales.txt, return
+     to sales.txt and write the following message on a new line (at the end):
+     AVERAGES WRITTEN IN average_sales.txt
      The file should end up like this...
 
      ...
      day 9 sales $1200 items 150
      day 19 sales $200 items 50
-     AVERAGES WRITTEN IN ventas_promedio.txt
+     AVERAGES WRITTEN IN average_sales.txt
   */
 
   return 0;
