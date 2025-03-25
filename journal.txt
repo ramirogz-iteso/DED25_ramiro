@@ -167,12 +167,17 @@ files_practice.c
 ###################
 Class # 19 =======================
 ==================================
-We will review the solution to the "stack_formula_validator.c"
-We will review binary files and work in Farms binary
+We worked in iteso_debt_rt_wb.c (read from text / write to binary) this is a file
+where you learn to read  text, reconstruct an array of students using dynamic memory
+and then dump that into binary file. You also need to follow the instructions to
+create another file and read its content to verify it's working.
+
+Reviewed the solution for files_practice.c
+Reviewed formula valitador.
 
 Class # 20 =======================
 ==================================
-TDA Class or somethinG new
+TDA Class or something new or questions before EXAM or questions from the project
 
 ###################
    W E E K   # 11
@@ -180,6 +185,8 @@ TDA Class or somethinG new
 
 Class # 21 =======================
 ==================================
+EXAM #2 (April 1st)
+EXAM #2 (April 1st)
 EXAM #2 (April 1st)
  
 Class # 22 =======================
