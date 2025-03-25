@@ -11,7 +11,7 @@ int main()
   /* Read the daily consumption line by line:
 
     day 5 sales $100.50 items 15
-    day 6 sales $210.99 items 21
+    day 6 sale $210.99 items 21
     ..
 
   */
@@ -25,9 +25,33 @@ int main()
      day 6 average $10.04
      ..
   */
+
+  FILE *sales = fopen("sales.txt", "r+");
+  FILE *promedios = fopen("average_sales.txt", "w");
+  int day;
+  float cost;
+  int items;
+  int ret;
+  char c;
+
+  fputs("MONTHLY AVERAGES\n", promedios);
+
+  while((ret=fscanf(sales, "day %d sales $%f items %d\n", 
+                &day, &cost, &items)) != EOF)
+  {
+    printf("read from file %d %f %d\n", day, cost, items);
+    fprintf(promedios, "day %d average %f\n", day, cost/(float)items);
+    getchar();
+    printf("loop\n");
+  }
+
+  fputs("\nAVERAGES WRITTEN IN average_sales.txt", sales);
+
+  fclose(sales);
+  fclose(promedios);
   
   /* After finishing writing in average_sales.txt, return
-     to sales.txt and write the following message on a new line (at the end):
+     to ventas.txt and write the following message on a new line:
      AVERAGES WRITTEN IN average_sales.txt
      The file should end up like this...
 
