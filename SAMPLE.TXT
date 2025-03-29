@@ -1,4 +1,0 @@
-c
-hola mundo
-Name: ramiro, Age: 10, GPA: 100.00
-y

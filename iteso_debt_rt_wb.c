@@ -126,10 +126,45 @@ int main()
 {
     char text_filename[] = "iteso_data.txt";
     char binary_filename[] = "iteso_debt.dump";
-    char school_name[50];
+    char school_name[15];
     student ** school;
     int num_students;
-    print_school_debt(school, num_students, school_name);
     
+    printf("hellow\n");
+    FILE * file = fopen(text_filename, "r");
+    if (!file) 
+    {
+        perror("Error opening file");
+        return 0;
+    }
+    
+    fscanf(file, "%d", &num_students);
+    printf("Found %d students in the file\n", num_students);
+    school = (student **)malloc(sizeof(student *) * num_students);
+    
+    for (int i = 0; i < num_students; i++)
+    {
+      int id; float money;  
+      school[i] = malloc(sizeof(student));
+      fscanf(file, "%d\n", &id);  
+      fscanf(file, "$%f\n", &money);
+      school[i]->id = id;
+      school[i]->debt = money;
+    }
+    fgets(school_name, 16, file);
+    
+    fclose(file);
+    print_school_debt(school, num_students, school_name);
+
+    // WRITE TO BINARY
+    file = fopen(binary_filename, "wb");
+
+    fwrite(&num_students, sizeof(int), 1, file);
+    for(int i=0; i<num_students; i++)
+    {
+      fwrite(school[i], sizeof(student), 1, file);
+    }
+    fwrite(school_name, 16, 1, file);
+    fclose(file);    
     return 0;
 }
