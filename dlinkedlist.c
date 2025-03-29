@@ -8,6 +8,7 @@
 typedef struct node {
   int value;
   struct node *next;
+  struct node *prev;
 } node;
 
 /* Our header is called "header" and is a GLOBAL variable  initialized to NULL
@@ -32,10 +33,17 @@ void printlist(node *list)
 {
   node *aux = list;
   printf("Current list elements:\n\t");
+  while (aux->next != NULL) 
+  {
+    printf("[%d]<->", aux->value);
+    aux = aux->next;
+  }
+  printf("[%d]<->", aux->value);
+  printf("-back-");
   while (aux != NULL) 
   {
-    printf("[%d]->", aux->value);
-    aux = aux->next;
+    printf("[%d]<->", aux->value);
+    aux = aux->prev;
   }
   printf("NULL\n\n");
 }
@@ -59,6 +67,7 @@ void add(node *n)
     nptr = nptr->next;
   }
   nptr->next = n;
+  n->prev = nptr;
 }
 
 //Pending:
@@ -142,7 +151,6 @@ int insertbefore(node *new, int n)
 void delete(int n)
 {
   node * nptr = header;
-  node * back = NULL;
   printf("\t\t(delete): number to delete: %d\n", n);
   while(nptr != NULL)
   {
@@ -160,9 +168,17 @@ void delete(int n)
       {  
         printf("\t\t(delete): found elem %d\n", nptr->value);
         // Delete a non-header node
-        node *next = nptr->next;
+        //node * behindme = nptr -> prev;
+        //node * infront = nptr -> next;
+
+        //behindme->next = infront;
+        //infront->prev = behindme;
+
+        (nptr->prev)->next = nptr -> next;
+        if(nptr->next != NULL)
+          nptr->next->prev = nptr -> prev;
         free(nptr);
-        back->next = next;
+
         printf("\t\t(delete): element deletion completed\n");
         return;
       }
@@ -172,7 +188,6 @@ void delete(int n)
       // Not this node, continue searching (keeping a pointer
       // to the previous node)
       printf("\t\t(delete): not found (%d)... next\n", nptr->value);
-      back = nptr;
       nptr = nptr->next;
     }
   }

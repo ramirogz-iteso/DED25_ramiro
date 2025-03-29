@@ -1,4 +1,44 @@
 
+=================== TERM # 2 ===========================
+Dynamic memory malloc/free 
+  do not worry for callor or realloc 
+  for every malloc / free
+  malloc.c
+
+How to declare arrays with malloc 
+  malloc (sizeof(int) * times);
+
+How to declare and use 2D arrays:
+  malloc2d.c   int matrix
+  malloc (sizeof(int *) * rows)
+  for every row malloc(sizeof(int));
+
+How to use malloc to create arrays of pointers
+  farm.c exercise
+
+SELF REFERENCING STRUCTS  
+  any struct that can point to istself ... NODE
+
+LINKEDLIST:
+  Insert, delete, print (Traverse) etc.
+  linkedlist.c
+  doublelinkedlist.c
+  expand.c
+
+STACKs
+  Like a linkedlsit but with rules
+  push()
+  pop()
+
+FILES:
+  Text files read and write
+  binary files read / write / seek (move the cursor at will)
+  
+
+
+
+=================== TERM # 1 ===========================
+
 Things you should ALREADY know:
   structs
   typedef | defines

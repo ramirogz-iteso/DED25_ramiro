@@ -177,7 +177,9 @@ Reviewed formula valitador.
 
 Class # 20 =======================
 ==================================
-TDA Class or something new or questions before EXAM or questions from the project
+Completed summary.txt with things to study for exam
+Class to finish iteso_debt_tb.c and any other pending file like double linkedlist
+
 
 ###################
    W E E K   # 11
