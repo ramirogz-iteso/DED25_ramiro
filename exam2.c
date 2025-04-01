@@ -286,26 +286,25 @@ void push(char data)
     stack_top = new_node;
   }
   count++;
-  printf("\tnode inserted\n");
 }
 
 // DO NOT TOUCH, MODIFICATIONS ARE NOT NEEDE HERE
-// For this version of the integer stack, returns -1 if there's nothing to pop
-int pop() 
+// For this version of the char stack, returns 0 if there's nothing to pop
+char pop() 
 {
   stack_node *nptr = stack_top;
 
   if (nptr == NULL)
   {
       printf("\nStack Underflow\n");
-      return -1;
+      return 0;
   }
   else
   {
     nptr = nptr->prev;
   }
 
-  int popped = stack_top->info;
+  char popped = stack_top->info;
   free(stack_top);
   stack_top = nptr;
   count--;
@@ -338,7 +337,7 @@ int main()
   printf("=== E03: Secret age \n");
   //e03();
   printf("=== E04: Stop the infinite loop (circular list) \n");
-  e04();
+  //e04();
   printf("=== E05: Multiple lists (array of lists) \n");
   //e05();
   printf("=== E06: Stack \n");
