@@ -132,6 +132,10 @@ int e02()
   L2n1.next=&L2n2; L2n2.next = &L2n3; L2n3.next = NULL;
   L1 = &L1n1; L2 = &L2n1;
 
+  // List are:
+  // L1 = 1 - 5 - 9 - 10
+  // L2 = 3 - 11 - 8
+
   node * result;
   /* DO NOT TOUCH */
  
@@ -172,12 +176,12 @@ int e02()
 
   VALUE 15 Pts
 */
-int e03()
+void e03()
 {
   /* ----------  EXPECTED RESPONSE:  --------------- */
  
   // I RAN THE PROGRAM, AND 
-  // THE AGE OF THE FUGUTIVE ON THIS DUMP IS _____ <= write it here!
+  // THE AGE OF THE FUGUTIVE ON THIS DUMP IS ____ <= write it here!
   /* ----------  EXPECTED RESPONSE:  --------------- */
 }
 
@@ -264,7 +268,7 @@ int count = 0;
 
 // DO NOT TOUCH, MODIFICATIONS ARE NOT NEEDE HERE
 // Push() operation to add elements to the stack 
-void push(int data) 
+void push(char data) 
 {
   /* inserting is always possible, create the node */
   stack_node *new_node  = (stack_node *)malloc(sizeof(stack_node));
@@ -327,17 +331,17 @@ int main()
 {
   printf("Midterm Exam 2 by : %s\n", "YOURNAMEHERE");
   printf("=== E01: Matrix \n");
-  e01();
+  //e01();
   getchar();
   printf("=== E02: Join lists \n");
-  e02();
+  //e02();
   printf("=== E03: Secret age \n");
-  e03();
+  //e03();
   printf("=== E04: Stop the infinite loop (circular list) \n");
   e04();
   printf("=== E05: Multiple lists (array of lists) \n");
-  e05();
+  //e05();
   printf("=== E06: Stack \n");
-  e06();
+  //e06();
   return 0;
 }
