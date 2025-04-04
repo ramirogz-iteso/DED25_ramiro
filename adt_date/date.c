@@ -8,16 +8,6 @@ struct date_s {
   int year;
 };
 
-date date_new(int d, int m, int y)
-{
-  date new_date = malloc (sizeof(struct date_s));
-  new_date->day = d;
-  new_date->month = m;
-  new_date->year = y;
-  return new_date;
-}
-
-/*
 date * date_new(int d, int m, int y)
 {
   date * new_date = malloc (sizeof(struct date_s));
@@ -27,18 +17,16 @@ date * date_new(int d, int m, int y)
   return new_date;
 }
 
-*/
-
-date date_copy(date d)
+date * date_copy(date * d)
 {
-  date new_date = malloc(sizeof(struct date_s));
+  date * new_date = malloc(sizeof(struct date_s));
   new_date->day = d->day;
   new_date->month = d->month;
   new_date->year = d->year;
   return new_date;
 }
 
-int date_comp(date d1, date d2)
+int date_comp(date * d1, date * d2)
 {
   int d1_days;
   int d2_days;
@@ -60,12 +48,12 @@ int date_comp(date d1, date d2)
    */ 
 }
 
-void date_prints(date d)
+void date_prints(date * d)
 {
   printf("%d / %d / %d\n", d->day, d->month, d->year);
 }
 
-void date_printl(date d)
+void date_printl(date * d)
 {
   printf("%d", d->day);
   if(d->day == 1 || d->day == 31)
