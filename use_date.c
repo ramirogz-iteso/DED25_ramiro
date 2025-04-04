@@ -25,8 +25,7 @@
 
 int main()
 {
-  date * today;   
-
+  date * today;
   today = date_new (1, 10, 2022);
   date_printl(today);
   date_prints(today);
@@ -42,4 +41,6 @@ int main()
   {
     printf("This dates are equal\n");
   }
+  //date_destroy(today);
+  //date_destroy(today_copy);
 }
