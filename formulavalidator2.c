@@ -9,8 +9,7 @@
 
 void isvalidformula(char * formula)
 {
-  //COMPLETE CREATE YOUR OWN STACK
-  
+  stack * s = stack_create();
   for(int c = 0; c<30; c++)
   {
     if(formula[c] == '\0')
@@ -18,13 +17,11 @@ void isvalidformula(char * formula)
 
     if(formula[c]=='(')
     {
-      //PUSH INTO YOUR NEW STACK
-      //PUSH!
+      stack_push(s, (void *)&formula[c]);
     }
     else if(formula[c]==')') 
     {
-      //POP FROM THE STACK
-      char * popped = /* POP! */
+      char * popped = (char *)stack_pop(s);
       if(popped == NULL)
       { 
         printf("ERROR, %s \n\tthis not valid formula\n\n", formula);
@@ -34,21 +31,22 @@ void isvalidformula(char * formula)
         printf("Popped element %c\n", *popped);
     }
   }
-  // Check if the stack is empty ...  and print its size
-  //if(// the stack contains something)
+  if(stack_isEmpty(s) == FALSE)
   {
      printf("ERROR, %s \n\tthis not valid formula\n\n", formula);
-     //printf("stack contains %d elements\n", /* get stack size */);
+     printf("stack contains %d elements\n", stack_size(s));
      return;
   }
- 
+  //si llegamos a esta este punto, el stack se encuentra vacio por lo tanto
+  //es una formula valida!
   printf("%s is a valid formula!\n\n", formula);
 
-  //DONT FORGET TO DESTROY THE STACK
+  stack_destroy(s);
 }
 
 int main() 
 {
   char formula1[30] = "((30+5)+(5))";
   isvalidformula(formula1);
+
 }

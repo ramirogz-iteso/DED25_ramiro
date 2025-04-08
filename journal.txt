@@ -193,6 +193,11 @@ EXAM #2 (April 1st)
  
 Class # 22 =======================
 ==================================
+Students saw ADT topic and completed home work (adt date).
+Review exam solution.
+Review adt_date
+Work on ADT Stack, complete adt_stack/stack.h adt_stack/stack.c and use 
+formulavalidator2.c to test it.
 
 
 ###################
