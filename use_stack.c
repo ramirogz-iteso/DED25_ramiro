@@ -27,7 +27,7 @@ int main()
   printf("Pop = %d\n", *popped_num);
   getchar();
 
-  /* 1 , stack de numeros * */
+  /* 1 , a stack to store numbers  * */
   stack * intStack = stack_create();
   int a = 10, b = 17, c = 12, d = 8;
   stack_push(intStack, &a);
@@ -51,13 +51,13 @@ int main()
   stack_destroy(intStack);
 
   printf("===============Arrays==================\n");
-  /* 2, stack de "strings" */
+  /* 2, stack of "strings" */
   stack * strStack = stack_create();
-  char str1[] = "hola";
-  char str2[] = "mundo";
+  char str1[] = "hello";
+  char str2[] = "world";
   stack_push(strStack, str1);
   stack_push(strStack, str2);
-  stack_push(strStack, "feliz");
+  stack_push(strStack, "happy");
   while(!stack_isEmpty(strStack)) {
     char* spopped = (char*) stack_pop(strStack);
     printf("Popped: %s\n", spopped);
@@ -65,8 +65,4 @@ int main()
   }
   
   stack_destroy(strStack);
-
-  /* Podemos crear stacks, de lo que queramos, 
-  lo importante es que la memoria del objeto se maneja por fuera, 
-  el stack, solo nos guarda referencias a ella */
 }
