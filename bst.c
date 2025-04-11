@@ -101,7 +101,7 @@ void learn_traversing_tree()
 
   //print in order (recursively)
   printf("\nPRINTING IN ORDER (using recursion) \n");
-  //print_inorder(root);
+  print_inorder(root);
   
   //print pre order (recursively)
   printf("\nPRINTING IN ORDER (using recursion) \n");
@@ -162,7 +162,7 @@ void print_inorder(node *n)
   printf("\tCalling my left child\n");
   print_inorder(n->left);   //L
   printf("%d ", n->value);  //P
-  printf("\tCalling my left child\n");
+  printf("\tCalling my right child\n");
   print_inorder(n->right);
 
 }
@@ -189,7 +189,6 @@ int main()
   getchar();
 
   /* Example 2 contains the code to add nodes and create a tree */
-  learn_building_tree(); 
   learn_building_tree(); 
 }
 
