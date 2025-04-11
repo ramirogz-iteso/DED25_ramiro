@@ -206,9 +206,21 @@ formulavalidator2.c to test it.
 
 Class # 23 =======================
 ==================================
+Queues class reviewed queue powerpoint and build the ADT queue
+adt_queue/queue.c
+adt_queue/queue.h
+use_queue.c
+Review theory and students work on implementation
 
 Class # 24 =======================
 ==================================
+Tree theory!
+Review how to build and traverse trees 
+Complete bst.c as far as you can.
+
+###################
+ SEMANA SANTAAAA
+ ###################
 
 ###################
    W E E K   # 13
