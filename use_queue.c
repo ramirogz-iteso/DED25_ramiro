@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "adt_queue/queue.h"
 
 typedef struct pollito
 {
@@ -69,8 +70,8 @@ int main() {
   /* el matadero */
   while(!queue_isEmpty(q1))
   {
-    //p = (pollito *) queue_dequeue(q1);
-    //printf("El pollito con HP = %d ha sido desplumado\n", p->hp);
+    p = (pollito *) queue_dequeue(q1);
+    printf("El pollito con HP = %d ha sido desplumado\n", p->hp);
   }
 
   /* la memoria de los pollos no fue destruida, solo la de los nodos

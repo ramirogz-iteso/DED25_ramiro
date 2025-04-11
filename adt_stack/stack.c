@@ -21,8 +21,6 @@ stack * stack_create()
   return stack;
 }
 
-// destroye el stack, recuerda que liberar la memoria del cliente es
-// responsabilidad del cliente.
 void stack_destroy(stack * st) 
 {
   node * n = st->top;
@@ -35,7 +33,6 @@ void stack_destroy(stack * st)
   free(st);
 }
 
-// regresa si el top del stack is NULL (TRUE or FALSE)
 boolean stack_isEmpty(stack * st) 
 {
   if(st->top == NULL)
@@ -44,7 +41,6 @@ boolean stack_isEmpty(stack * st)
     return FALSE;
 }
 
-// regresa el numero de elementos en el stack
 int stack_size(stack * st) 
 {
   return st->size;
@@ -61,7 +57,7 @@ void stack_push(stack * st, void * data)
 
 void * stack_pop(stack * st) 
 {
-  if(st->top == NULL)  // pila vacia, imposible hacer pop
+  if(st->top == NULL)
     return NULL;
 
   void * data = st->top->data;
