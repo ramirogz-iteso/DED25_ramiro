@@ -101,7 +101,7 @@ void learn_traversing_tree()
 
   //print in order (recursively)
   printf("\nPRINTING IN ORDER (using recursion) \n");
-  print_inorder(root);
+  //print_inorder(root);
   
   //print pre order (recursively)
   printf("\nPRINTING IN ORDER (using recursion) \n");
@@ -142,59 +142,13 @@ void learn_building_tree()
   printf("%s",contains_iter(root, 28) ? "\tTRUE":"\tFALSE");
   printf("%s",contains_iter(root, 25) ? "\tTRUE":"\tFALSE");
   printf("%s",contains_iter(root, 42) ? "\tTRUE":"\tFALSE");
-
-  //contains (recursivo) 
-  //Complete and try
-
-
 }
 
 
 boolean add_iter(int num)
 {
-  node *nptr, *new_node;
-  if(root == NULL)
-  {
-    new_node = create_node(num);
-    root = new_node;
-    printf("Root created\n");
-    return TRUE;
-  }
-
-  boolean added = FALSE;
-  nptr = root;
-  while(added != TRUE)
-  {
-    if(num < nptr->value)
-    {
-      if(nptr->left == NULL)
-      {
-        node * n = create_node(num);
-        nptr->left = n;
-        added = TRUE;
-      }
-      else
-        nptr = nptr->left;
-    }
-    else if (num > nptr->value)
-    {
-      if(nptr->right == NULL)
-      {
-        node * n = create_node(num);
-        nptr->right = n;
-        added = TRUE;
-      }
-      else
-        nptr = nptr->right; 
-    }
-    else
-    {
-      //value already exists, return FALSE
-      added = FALSE;
-      break;
-    }
-  }
-  return (added ? TRUE : FALSE);
+  /* Complete me :) */
+  return TRUE;
 }
 
 
@@ -215,75 +169,15 @@ void print_inorder(node *n)
 
 boolean contains_recur(node * n, int value)
 {
-  if(n == NULL) return FALSE;
-  printf("comparing with %d\n", n->value);
-
-  if(n->value == value)
-  {
-    printf("lo encontre\n");
-    return TRUE;
-  }
-  if(value < n->value)
-  {
-    boolean existe_enmihijo = contains_recur(n->left, value);
-    printf("soy %d y mi hijo %s lo tiene\n", 
-      n->value, existe_enmihijo ? "SI" : "NO");
-    return existe_enmihijo;
-  }
-  else
-    return contains_recur(n->right, value);
+  // complete me :) 
+  return TRUE;
 }
 
 boolean contains_iter(node * n, int value)
 {
-  node * current = n;
-  while(current != NULL)
-  {
-    getchar();
-    printf("at node %d\n", current->value);
-    if(current->value == value)
-    {
-      printf("found it! returning TRUE\n");
-      return TRUE;
-      //found!
-    }
-    else
-    { 
-      printf("Not here, lets compare...");
-      printf("%d < or > %d\n", value, current->value);
-      if (value < current->value)
-      {
-        printf("taking left...\n");
-        current = current->left;
-        //left
-      }
-      else
-      {
-        printf("taking right...\n");
-        current = current->right; 
-        //right
-      }
-    }
-  }
-  //nothing found
+  // complete me :)
   return FALSE;
 }
-
-boolean contains_iter_noprint(node * n, int value)
-{
-  node * current = n;
-  while(current != NULL)
-  {
-    if(current->value == value)
-      return TRUE;
-    else if (value < current->value)
-        current = current->left;
-    else
-        current = current->right; 
-  }
-  return FALSE;
-}
-
 
 int main()
 {
