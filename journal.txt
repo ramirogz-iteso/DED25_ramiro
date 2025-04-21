@@ -228,9 +228,12 @@ Complete bst.c as far as you can.
 
 Class # 25 =======================
 ==================================
+Review the solution of bst.c
+See theory for ADT SET (uses a tree)
 
 Class # 26 =======================
 ==================================
+Code everything.
 
 ###################
    W E E K   # 14

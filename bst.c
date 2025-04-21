@@ -36,11 +36,11 @@ boolean contains_recur(node * n, int value);
 
 node * create_node(int num)
 {
-  node * node = malloc (sizeof(node));
-  node->value = num;
-  node->left = NULL;
-  node->right = NULL;
-  return node;
+  node * n = malloc (sizeof(node));
+  n->value = num;
+  n->left = NULL;
+  n->right = NULL;
+  return n;
 }
 
 /* add a number VALUE into the three, do it iteratively */
