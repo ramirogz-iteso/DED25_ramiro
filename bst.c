@@ -26,6 +26,7 @@ typedef int boolean;
 #define TRUE 1
 #define FALSE 0
 
+/* prints folling the IN-ORDER principile (L-P-R)*/
 void print_inorder(node * n);
 
 /* check if a three cointains a number, do it iteratively */
@@ -34,6 +35,7 @@ boolean contains_iter(node * n, int value);
 /* check if a three cointains a number, do it recursively */
 boolean contains_recur(node * n, int value);
 
+/* function to create and allocatem memory for a new tree node */
 node * create_node(int num)
 {
   node * n = malloc (sizeof(node));
@@ -52,12 +54,9 @@ boolean add_recu(node *node, int value);
 /* In all this examples, the pointer "root" contains the root of the
 binary tree, its a global pointer and its the first element 
 to access the full three. Similar to how stack_top was our global
-pointer for our stack.
-
-Despues de entender la logica, lo convertiremos en un TDA */
+pointer for our stack. */
 
 node * root = NULL;
-
 
 
 /*              root
@@ -80,7 +79,6 @@ We can do this in three ways:
    POST ORDER :
 */
 
-
 void learn_traversing_tree()
 {
  // ====  STATIC creation of a three (from the diagram above)
@@ -102,14 +100,17 @@ void learn_traversing_tree()
   //print in order (recursively)
   printf("\nPRINTING IN ORDER (using recursion) \n");
   print_inorder(root);
+  printf("\n");
   
   //print pre order (recursively)
   printf("\nPRINTING IN ORDER (using recursion) \n");
   //Complete here
+  printf("\n");
 
   //print post order (recursivo)
   printf("\nPRINTING POST ORDER (using recursion) \n");
   //Complete here
+  printf("\n");
 
   //Cand you print a tree WITHOUT Recursion?:
   //YES! But you need an auxiliary stack
@@ -122,60 +123,229 @@ void learn_building_tree()
 {
   root = NULL;
 
-  int numbers[9] = {5, 4, 6, 8, 10, 2, 1, 10, 7};
-
-  //Add the above elements too the tree
-  add_iter(0);
+  int numbers[] = {42, 5, 4, 6, 8, 1, 2, 1, 10, 7, 25};
   
-  for (int x = 0; x<9; x++)
+  for (int x = 0; x<11; x++)
   {
-    printf("Adding %d to BST(Set)\n", numbers[x]);
+    printf("Adding %d to BST (Set)\n", numbers[x]);
     add_iter(numbers[x]);
   }
   printf("Adding nodes done\n");
 
   print_inorder(root);
  
-  getchar();
- 
   //contains (iterative)
-  printf("%s",contains_iter(root, 28) ? "\tTRUE":"\tFALSE");
-  printf("%s",contains_iter(root, 25) ? "\tTRUE":"\tFALSE");
-  printf("%s",contains_iter(root, 42) ? "\tTRUE":"\tFALSE");
-}
 
+  printf("\nDoes my tree contains 28? %s", 
+         contains_iter(root, 28) ? "\tTRUE\n":"\tFALSE\n");
+
+  printf("Does my tree contains 25? %s", 
+         contains_iter(root, 25) ? "\tTRUE\n":"\tFALSE\n");
+
+  boolean contains_42 = contains_iter(root, 42);
+  if(contains_42)
+    printf("My tree contains 42!\n");
+  else
+    printf("My tree does NOT contain 42 :( \n");
+
+  //contains (recursivo) 
+  //Complete and try
+}
 
 boolean add_iter(int num)
 {
-  /* Complete me :) */
-  return TRUE;
+  #ifdef DEBUG
+  printf("add_iter: about to add %d\n", num);
+  #endif 
+
+  node *nptr, *new_node;
+  if(root == NULL)
+  {
+    new_node = create_node(num);
+    root = new_node;
+    #ifdef DEBUG
+    printf("add_iter: Root created\n");
+    #endif 
+  
+    return TRUE;
+  }
+
+  boolean added = FALSE;
+  nptr = root;
+  while(added != TRUE)
+  {
+    #ifdef DEBUG
+      printf("  add_iter: is %d vs %d = %s\n", num, nptr->value, 
+              num > nptr->value ? "+ take right" : "- take left");
+    #endif 
+    
+    if(num < nptr->value)
+    {
+      if(nptr->left == NULL)
+      {
+        #ifdef DEBUG 
+          printf("  add_iter: %d empty LEFT child, create here\n", 
+                 nptr->value);
+        #endif
+        
+        node * n = create_node(num);
+        nptr->left = n;
+        added = TRUE;
+      }
+      else
+      {
+        #ifdef DEBUG
+          printf("  add_iter: smaller, take left...\n");
+        #endif
+        nptr = nptr->left;
+      }
+    }
+    else if (num > nptr->value)
+    {
+      if(nptr->right == NULL)
+      {
+        #ifdef DEBUG
+          printf("  add_iter: %d empty RIGHT child, create here\n", 
+                 nptr->value);
+        #endif
+
+        node * n = create_node(num);
+        nptr->right = n;
+        added = TRUE;
+      }
+      else
+      {
+        #ifdef DEBUG
+          printf("  add_iter: greather, take right...\n");
+        #endif
+        nptr = nptr->right; 
+      }
+    }
+    else
+    {
+      //value already exists, return FALSE
+      #ifdef DEBUG
+        printf("  add_iter: value exists, abort\n");
+      #endif
+      
+      added = FALSE;
+      
+      break;
+    }
+  }
+  return (added ? TRUE : FALSE);
 }
 
-
+// Follows L P R
 void print_inorder(node *n)
 {
   if(n == NULL)
   {
-    printf("\tInORDER : END ");
+    #ifdef DEBUG
+    printf("\tInORDER : END\n ");
+    #endif 
     return;
   }
+  #ifdef DEBUG
   printf("\tCalling my left child\n");
+  #endif
+
   print_inorder(n->left);   //L
+
   printf("%d ", n->value);  //P
+  #ifdef DEBUG
+  printf("%d\n", n->value);  //P
   printf("\tCalling my right child\n");
+  #endif
+  print_inorder(n->right);   //R
+
+  /* Don't get confused, wihtout all this debug, 
+     this is how the function looks:
+
+  if(n == NULL)
+    return;
+
+  print_inorder(n->left);
+  printf("%d ", n->value);
   print_inorder(n->right);
 
+  Only 5 lines */
 }
 
 boolean contains_recur(node * n, int value)
 {
-  // complete me :) 
-  return TRUE;
+  if(n == NULL) return FALSE;
+  printf("  comparing with %d\n", n->value);
+
+  if(n->value == value)
+  {
+    printf("  found\n");
+    return TRUE;
+  }
+  if(value < n->value)
+  {
+    boolean existinchild = contains_recur(n->left, value);
+    printf("node %d my child %s containse\n", 
+      n->value, existinchild ? "YES" : "NO");
+    return existinchild;
+  }
+  else
+    return contains_recur(n->right, value);
+
+  /*
+    if(n == NULL) return FALSE;
+    if(n->value == value) return TRUE;
+
+    if(value < n->value)
+      return contains(n->left, value);
+    else
+      return contains(n->right, value);
+
+
+  */
 }
 
 boolean contains_iter(node * n, int value)
 {
-  // complete me :)
+  node * current = n;
+  while(current != NULL)
+  {
+    #ifdef DEBUG
+    printf("  contains: curr node %d\n", current->value);
+    #endif
+    if(current->value == value)
+    {
+      #ifdef DEBUG
+      printf("  contains: found it! returning TRUE\n");
+      #endif
+      return TRUE;
+      //found!
+    }
+    else
+    { 
+      #ifdef DEBUG
+      printf("  contains: Not here, lets compare...");
+      printf("%d < or > %d\n", value, current->value);
+      #endif
+      if (value < current->value)
+      {
+        #ifdef DEBUG
+        printf("  contains: taking left...\n");
+        #endif
+        current = current->left;
+        //left
+      }
+      else
+      {
+        #ifdef DEBUG
+        printf("  contains: taking right...\n");
+        #endif
+        current = current->right; 
+        //right
+      }
+    }
+  }
+  //nothing found
   return FALSE;
 }
 
@@ -185,8 +355,6 @@ int main()
   /*Step 1, lets print a existing tree */
   printf("traversing_tree() ... \n");
   learn_traversing_tree();
-
-  getchar();
 
   /* Example 2 contains the code to add nodes and create a tree */
   learn_building_tree(); 
