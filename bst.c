@@ -96,6 +96,7 @@ void learn_traversing_tree()
   n30.left=&n28;   
 
   root = &n25;
+  //comment
 
   //print in order (recursively)
   printf("\nPRINTING IN ORDER (using recursion) \n");
