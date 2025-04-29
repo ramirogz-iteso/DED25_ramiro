@@ -191,6 +191,18 @@ EXAM #2 (April 1st)
 EXAM #2 (April 1st)
 EXAM #2 (April 1st)
  
+
+ALL ADTs we have seen:
+On the video (home work)
+date
+vector
+stack
+queue
+set
+map
+queue
+ 
+
 Class # 22 =======================
 ==================================
 Students saw ADT topic and completed home work (adt date).
@@ -242,10 +254,13 @@ Hash Map theory
 ###################
 Class # 27 =======================
 ==================================
-Priority Queue theory
+Review solution for use_set.c and set files.
+Reviewed the power point presentation to draw the pseudo code around
+the hashmap functions.
 
 Class # 28 =======================
 ==================================
+Priority Queue theory.
 Project description and deliver to students
 
 ###################
@@ -254,6 +269,12 @@ Project description and deliver to students
 
 Class # 29 =======================
 ==================================
+Class to Understand how all the ADT are used, so far we have seen.
+Stack
+Queue
+set
+Map
+PQ (priority queue)
 
 Class # 30 =======================
 ==================================
