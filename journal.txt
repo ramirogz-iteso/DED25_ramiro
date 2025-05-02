@@ -260,6 +260,7 @@ the hashmap functions.
 
 Class # 28 =======================
 ==================================
+ONLINE CLASS:
 Priority Queue theory.
 Project description and deliver to students
 
