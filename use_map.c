@@ -38,7 +38,7 @@ boolean wordEquals(void * t1, void * t2) {
 int main() 
 {
                           //size // hash // keycompare
-  map * map1 = map_create(100, wordHash, wordEquals);
+  map * map1 = map_create(4, wordHash, wordEquals);
   printf("Inserting Lunes into map... \n");
   map_put(map1, "Lunes", "Monday");
   printf("Inserting Martes into map... \n");

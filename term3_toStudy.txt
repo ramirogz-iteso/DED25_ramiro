@@ -1,0 +1,49 @@
+ADT Abstract Data Types:
+  -Why ADT : Abstraction! No access to inner structures. How do we do this?
+  header files  -  #ifdef
+  How to compile: gcc file_that_uses.c adt.c -o ....
+  Path : Relative and Absolute -> #include "what_path_to_put/here/file.txt" 
+  Date.c
+
+When to use one vs the other:
+How one works inside vs the other: Review the Algorithm.
+
+FUNCTION Pointers: used on the ADTs that require the user to pass a comp func
+or a hash func or something similar.
+
+VOID Pointers: used in the ADTs to generalize what they store.
+Understand that the memory of the objects we store in the ADTs, is handled by
+the user.
+
+Reviews the files on how to use:
+use_date.c | use_map.c | use_pq.c | ... etc
+
+  ADT Linked list based:
+  Stack
+    Access policy (LIFO vs FIFO)
+  Queue
+
+  Tree based :
+  set 
+    Binary trees, how to build them
+    How to traverse them: 
+      In-Order : Post Order : Pre Order (Recursion)
+
+  Hash table based:
+  Map
+    Why hash is important
+    Collisions
+    How is it build inside (struct, hash funct, array, compare func)
+
+  Heap based:
+  Priority Queue
+    What is a heap, and why we can use an array to represent it.
+    3 Priorities that a heap has: 
+      1) parent node > me. 2) tree is complete 3) left loaded
+      
+
+ 
+
+  
+
+

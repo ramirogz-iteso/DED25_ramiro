@@ -5,17 +5,19 @@
    W E E K   # 1
 ###################
 Class # 1 ======================= Jan 21st
-"Intro to DED, review class rules. Install VSCODE - LiveShare - GitHub. Create and share their first 
-repositories with professor. Learn how to compile and use the terminal inside VS Code.
-Used: hello_world.c to fix small compile issues. terminal_intro.txt to review commands. Homework, 
-complete their Repositories and make sure gcc is installed and running."																
+"Intro to DED, review class rules. Install VSCODE - LiveShare - GitHub. 
+Create and share their first repositories with professor. Learn how to compile 
+and use the terminal inside VS Code.
+Used: hello_world.c to fix small compile issues. terminal_intro.txt to 
+review commands. Homework, complete their Repositories and make sure gcc is 
+installed and running."																
 =================================
 
 Class # 2 ======================= Jan 24th
-Reviewed Pointers intro, see "3. Introduction to pointers.pptx". We review and complete pointers_basics.c. 
-It had a small excercise for them. The final version of the file is already in GitHub.
-The tutoring session schedule was agreed upon, see post above.
-No homework, just keep practicing and getting familiar with everything.
+Reviewed Pointers intro, see "3. Introduction to pointers.pptx". We review and 
+complete pointers_basics.c. It had a small excercise for them. The final version
+of the file is already in GitHub. The tutoring session schedule was agreed upon, 
+see post above. No homework, just keep practicing and getting familiar with everything.
 =================================
 
 ###################
@@ -25,9 +27,10 @@ Class # 1 =================
 
 Class # 3 ======================= Jan 28th
 4. Pointers value vs reference and pointer arithmetic.pptx. 
-Then "value_vs_reference.c" | "value_vs_reference_practice.c | "pointer_math.c" | "pointer_math_practice.c" 
-in this order. The idea is to go thru all files during class and the solved examples will be fully reviewed 
-next class once all have time to process it.																
+Then "value_vs_reference.c" | "value_vs_reference_practice.c | "pointer_math.c" 
+| "pointer_math_practice.c" in this order. 
+The idea is to go thru all files during class and the solved examples will be 
+fully reviewed next class once all have time to process it.																
 =================================
 
 Class # 4 ======================= Jan 31st
@@ -42,9 +45,14 @@ Reviewed together : ""void_ptr_basic.c"" and ""void_struct_student.c"
 ###################
 Class # 5 ======================= Feb 4th
 "First Half of the class: Review structs again, file ""structs.c"". 
-Put all the class to practice almost everything we have seen so far in ""structs_practice_cars.c"" where we will create an array of 4 cars and create functions to set individual cars and another to print all the array using pointer arithmetic over a struct array. Use NULL pointer validations. Use string.h in case they don't remember.
-Second half of the class: Function_pointers.ppt and get all the way thru ""func_ptr.c"" as intro. 
-Homework, study function pointers and complete structs_practice_cars.c if needed.
+Put all the class to practice almost everything we have seen so far in 
+"structs_practice_cars.c" where we will create an array of 4 cars and create 
+functions to set individual cars and another to print all the array using pointe
+arithmetic over a struct array. Use NULL pointer validations. 
+Use string.h in case they don't remember.
+Second half of the class: Function_pointers.ppt and get all the way thru 
+""func_ptr.c"" as intro. Homework, study function pointers and complete 
+structs_practice_cars.c if needed.
 
 =================================
 
@@ -242,12 +250,13 @@ Class # 25 =======================
 ==================================
 Review the solution of bst.c
 See theory for ADT SET (uses a tree)
+15. sets.pptx
 
 Class # 26 =======================
 ==================================
 Code everything on the SET.
 Hash Map theory
-
+16. Maps - Hash tables.pptx
 
 ###################
    W E E K   # 14
@@ -262,23 +271,36 @@ Class # 28 =======================
 ==================================
 ONLINE CLASS:
 Priority Queue theory.
-Project description and deliver to students
+Project description and deliver to students:
+Today we reviewed the solution for the MAP, all files are ready in GitHub
+We also saw the introduction for the Priority Queue (PQ) that will be used 
+in the project. For this one we are doing the opposite approach, the code is 
+ready (use_pq.c / pq.c and pq.h) your task is to try to understand how it works.
+Finally the Project #3 was presented, it will be done in pairs. 
+Please have your teammate ready for next class, review the PDF and the attached 
+video if you missed the class 
 
 ###################
    W E E K   # 15
 ###################
-
 Class # 29 =======================
 ==================================
+Review a detailed example of how to build a huffman tree "Goool de Mexico!!!"
+Review the inner details of how a priority queue works, heaps.
+17. Priority Queues  (Heaps)
+
+Review in detail 
+
+Class # 30 =======================
+==================================
+FINAL REVIEW BEFORE EXAM
 Class to Understand how all the ADT are used, so far we have seen.
 Stack
 Queue
 set
 Map
-PQ (priority queue)
-
-Class # 30 =======================
-==================================
+Trees
+PQ (priority queue) Review the excercise done by hand
 
 ###################
    W E E K   # 16
